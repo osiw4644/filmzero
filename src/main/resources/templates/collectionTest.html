@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>movieInfoList</title>
+</head>
+<body>
+<h2>로맨스컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie1: ${movieList1}">
+    <td th:text="${movie1.id}"></td>
+    <td th:text="${movie1.movieNm}"></td>
+    <td th:text="${movie1.openDt}"></td>
+    <td th:text="${movie1.nationNm}"></td>
+    <td th:text="${movie1.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>애니컬렉션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie2: ${movieList2}">
+    <td th:text="${movie2.id}"></td>
+    <td th:text="${movie2.movieNm}"></td>
+    <td th:text="${movie2.openDt}"></td>
+    <td th:text="${movie2.nationNm}"></td>
+    <td th:text="${movie2.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>별점높은순컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie3: ${movieList3}">
+    <td th:text="${movie3.id}"></td>
+    <td th:text="${movie3.movieNm}"></td>
+    <td th:text="${movie3.openDt}"></td>
+    <td th:text="${movie3.nationNm}"></td>
+    <td th:text="${movie3.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>누적관객많은컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie4: ${movieList4}">
+    <td th:text="${movie4.id}"></td>
+    <td th:text="${movie4.movieNm}"></td>
+    <td th:text="${movie4.openDt}"></td>
+    <td th:text="${movie4.nationNm}"></td>
+    <td th:text="${movie4.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>스릴러컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie5: ${movieList5}">
+    <td th:text="${movie5.id}"></td>
+    <td th:text="${movie5.movieNm}"></td>
+    <td th:text="${movie5.openDt}"></td>
+    <td th:text="${movie5.nationNm}"></td>
+    <td th:text="${movie5.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>공포컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie6: ${movieList6}">
+    <td th:text="${movie6.id}"></td>
+    <td th:text="${movie6.movieNm}"></td>
+    <td th:text="${movie6.openDt}"></td>
+    <td th:text="${movie6.nationNm}"></td>
+    <td th:text="${movie6.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>액션컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie7: ${movieList7}">
+    <td th:text="${movie7.id}"></td>
+    <td th:text="${movie7.movieNm}"></td>
+    <td th:text="${movie7.openDt}"></td>
+    <td th:text="${movie7.nationNm}"></td>
+    <td th:text="${movie7.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>범죄컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie8: ${movieList8}">
+    <td th:text="${movie8.id}"></td>
+    <td th:text="${movie8.movieNm}"></td>
+    <td th:text="${movie8.openDt}"></td>
+    <td th:text="${movie8.nationNm}"></td>
+    <td th:text="${movie8.genreNm}"></td>
+  </tr>
+</table>
+
+<h2>다큐멘터리컬랙션</h2>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화제목(국문)</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+  </tr>
+  <tr th:each="movie9: ${movieList9}">
+    <td th:text="${movie9.id}"></td>
+    <td th:text="${movie9.movieNm}"></td>
+    <td th:text="${movie9.openDt}"></td>
+    <td th:text="${movie9.nationNm}"></td>
+    <td th:text="${movie9.genreNm}"></td>
+  </tr>
+</table>
+
+
+</body>
+</html>

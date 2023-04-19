@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{body}">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/summerNote/summernote-lite.css}"/>
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/sub.css}" />
+  <link rel="stylesheet" th:href="@{/css/board.css}"/>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/common.js}"></script>
+  <script th:inline="javascript"></script>
+</th:block>
+<body>
+<div layout:fragment="content">
+
+  <main class="main neo">
+    <div class="container" id="top">
+      <section class="section FnQsetion">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h2 class="title jal">F&Q</h2>
+            <div class="btnBox">
+              <div sec:authorize="isAuthenticated()" class="writeBtn">
+                <a href="/board/save">문의 작성하기</a>
+              </div>
+              <div class="writeBtn">
+                <a href="/board/paging">문의 확인하기</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contentBox">
+            <div class="flexBox pointer">
+              <div>
+                <span class="themeP neoB">Q.</span> 포인트는 어떻게
+                획득하나요?
+              </div>
+              <div class="moreView">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                <span class="themeP neoB">A.</span> 리뷰 작성, 이벤트를 통해
+                획득 가능합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="contentBox">
+            <div class="flexBox pointer">
+              <div>
+                <span class="themeP neoB">Q.</span> 이름을 개명했는데 어디서
+                바꾸나요?
+              </div>
+              <div class="moreView">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                <span class="themeP neoB">A.</span> 홈페이지 로그인 후 프로필
+                사진을 클릭하여 [마이페이지]로 이동한 후 <br />
+                [회원정보 수정]에서 변경 가능합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="contentBox">
+            <div class="flexBox pointer">
+              <div>
+                <span class="themeP neoB">Q.</span> 아이디를 바꾸고 싶은데
+                수정할 수 있나요?
+              </div>
+              <div class="moreView">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                <span class="themeP neoB">A.</span> 회원가입시 입력한 아이디는
+                변경이 불가합니다. <br />
+                탈퇴 후 재가입(신규회원가입)을 통해 새로운 아이디를 지정할 수
+                있습니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="contentBox">
+            <div class="flexBox pointer">
+              <div>
+                <span class="themeP neoB">Q.</span> 기프트샵에서 교환한 상품의
+                유효기간을 연장하고 싶어요.
+              </div>
+              <div class="moreView">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                <span class="themeP neoB">A.</span> 기프트샵에서 구매한 상품의
+                경우 별도의 유효기간 연장이 불가합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="contentBox">
+            <div class="flexBox pointer">
+              <div>
+                <span class="themeP neoB">Q.</span> 기프트샵 구매 상품을
+                환불하고 싶어요.
+              </div>
+              <div class="moreView">
+                <i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+            <div class="answer">
+              <p>
+                <span class="themeP neoB">A.</span> 기프트샵에서 구매한
+                상품권은 취소 및 환불이 불가합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="bottomUtill">
+    <div class="localBtn pointer">
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+
+    <div class="utillBtn pointer topBtn">
+      <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="utillBtn pointer eventBtn">
+      <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+    </div>
+
+    <div class="utillBtn pointer inquiryBtn">
+      <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

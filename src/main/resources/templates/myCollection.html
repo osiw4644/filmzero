@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/sub.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/common.js}"></script>
+</th:block>
+<div layout:fragment="content">
+  <body>
+  <main class="main neo">
+    <div class="container" id="top">
+      <section class="section collectionSec">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h2 class="title jal">마이 컬렉션</h2>
+          </div>
+
+          <div class="content">
+            <div class="collectionBox">
+              <a href="./collectPage.html">
+                <div class="imgBox">
+                  <img
+                          class="MB8 MR8"
+                          src="/image/main/collection/EX/kann1.jpg"
+                  />
+                  <img
+                          class="MB8"
+                          src="/image/main/collection/EX/kann2.jpg"
+                  />
+                  <img
+                          class="MR8"
+                          src="/image/main/collection/EX/kann3.jpg"
+                  />
+                  <img src="/image/main/collection/EX/kann4.jpg" />
+                </div>
+                <div class="txtBox">
+                  <h2>컬렉션 제목</h2>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="bottomUtill">
+    <div class="localBtn pointer">
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+
+    <div class="utillBtn pointer topBtn">
+      <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="utillBtn pointer eventBtn">
+      <a href="./event.html"><i class="bi bi-calendar-check"></i></a>
+    </div>
+
+    <div class="utillBtn pointer inquiryBtn">
+      <a href="./inquiry.html"><i class="bi bi-question-lg"></i></a>
+    </div>
+  </div>
+  </body>
+</div>
+</html>

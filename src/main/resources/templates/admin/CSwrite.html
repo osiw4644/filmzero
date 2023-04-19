@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/summerNote/summernote-lite.css}"/>
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/sub.css}" />
+  <link rel="stylesheet" th:href="@{/css/board.css}"/>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/main.js}"></script>
+  <script th:src="@{/js/summerNote/summernote-lite.js}"></script>
+  <script th:src="@{/js/summerNote/lang/summernote-ko-KR.js}"></script>
+
+  <script th:src="@{/js/summerNote.js}"></script>
+  <script th:inline="javascript"></script>
+</th:block>
+<body>
+<div layout:fragment="content">
+  <form action="/board/save" method="post" enctype="multipart/form-data">
+    <main class="main neo">
+      <div class="container" id="top">
+        <section class="section CSwriteSec">
+          <div class="contentWrap">
+            <div class="titleBox">
+              <h2 class="title jal">문의 작성</h2>
+            </div>
+
+
+            <div class="contentBox">
+              <div class="flexBox">
+                <div class="inputBox">
+                  <input type="text" name="boardTitle" id="title" placeholder="제목을 입력하세요" >
+                </div>
+              </div>
+
+              <div class="inputBox">
+                <textarea name="boardContents" cols="170" rows="30" placeholder="내용을 입력하세요" ></textarea> <br>
+              </div>
+
+              <div class="inputBox">
+                <input type="file" id="file" name="boardFile" multiple accept="image/*" >
+              </div>
+
+              <div class="btn neo">
+                <input type="submit" value="등록">
+                <input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}">
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+  </form>
+</div>
+</body>
+</html>

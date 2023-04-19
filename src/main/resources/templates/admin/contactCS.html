@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin/adminBody}">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/adminCommon.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/adminCommon.js}"></script>
+</th:block>
+
+<div layout:fragment="content">
+  <body>
+  <main class="main">
+    <div class="container">
+      <section class="section">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h1 class="jal">신고/문의 관리</h1>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  </body>
+</div>
+</html>

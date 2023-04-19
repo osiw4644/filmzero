@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf/org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<header th:fragment="adminHeader">
+  <header class="neo">
+    <div class="headerWrap">
+      <nav class="navBox">
+        <ul class="menuList">
+          <li class="menuTitle">
+            <a href="/notice/admin/paging">공지사항 관리</a>
+          </li>
+
+          <li class="menuTitle">
+            <a href="/board/admin/paging">신고/문의관리</a>
+          </li>
+          <li class="menuTitle"><a href="/member/admin/paging">회원 관리</a></li>
+        </ul>
+      </nav>
+
+      <div class="logoBox">
+        <a href="/admin">
+          <img src="/image/favicon.png" alt=""/></a>
+      </div>
+
+      <div class="infoBox">
+        <div class="profile">
+          <p>환영합니다, admin님</p>
+        </div>
+        <div class="alertBox"><i class="bi bi-bell-fill"></i></div>
+      </div>
+
+      <div class="goHome">
+        <div class="btn"><a href="/admin">홈페이지로</a></div>
+      </div>
+    </div>
+  </header>
+</header>
+
+</html>

@@ -1,0 +1,618 @@
+/* 로그인 페이지 */
+
+.loginSection {
+  padding: 45px 0;
+}
+
+.loginSection .contentBox {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.loginSection .titleBox {
+  justify-content: center;
+}
+
+.loginSection .contentBox .inputBox {
+  width: 100%;
+}
+
+.loginSection .contentBox .inputBox input {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.loginSection .contentBox .btnBox {
+  width: 100%;
+  text-align: center;
+  background: #7324a1;
+  padding: 20px 0;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.loginSection .contentBox .btnBox a {
+  color: #fff;
+}
+
+.loginSection .contentBox .searchMenu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loginSection .contentBox .searchMenu li {
+  text-align: center;
+  width: 33%;
+  border-right: 1px solid #ccc;
+}
+
+.loginSection .contentBox .searchMenu li:last-child {
+  border: 0;
+}
+
+/* 회원가입 영역 JOIN*/
+
+.joinSection .contentBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.joinSection .contentBox .flexBox {
+  width: 45%;
+  padding: 0 3%;
+}
+
+.joinSection .contentBox .flexBox:first-child {
+  border-right: 1px solid #ccc;
+}
+
+.joinSection .contentBox .flexBox .titleBox {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 24px;
+}
+
+.joinSection .contentBox .flexBox .inputWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.joinSection .contentBox .flexBox .inputWrap label {
+  width: 45%;
+  display: block;
+  line-height: 40px;
+  text-align: left;
+}
+
+.joinSection .contentBox .flexBox .inputWrap input {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  width: 55%;
+  height: 40px;
+  padding: 0 15px;
+  outline: none;
+}
+
+.joinSection .contentBox .flexBox .agreementsBox {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.joinSection .contentBox .flexBox .check_box {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+}
+
+.joinSection .contentBox .flexBox .check_box input {
+  margin-right: 10px;
+}
+
+.joinSection .contentBox .flexBox .check_box label {
+  display: block;
+  width: 100%;
+}
+
+.joinSection .contentBox .flexBox .check_box label i {
+  float: right;
+}
+
+.joinSection .contentBox .flexBox .agreementsBox textarea {
+  resize: none;
+  width: 100%;
+  height: 300px;
+}
+
+.joinSection .contentBox .flexBox .btn {
+  background: #7324a1;
+  width: 20%;
+  padding: 15px 0;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 30px;
+  float: right;
+}
+
+.joinSection .contentBox .flexBox .btn a {
+  display: block;
+  color: #fff;
+  width: 100%;
+}
+
+/* 공지사항 */
+.noticeTable tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.noticeTable tr:first-child {
+  font-family: "NanumSquareNeoBold" !important;
+  font-size: 18px;
+}
+
+.noticeTable tr td {
+  padding: 20px 0;
+}
+
+.noticeTable .num {
+  width: 5%;
+}
+
+.noticeTable .title {
+  width: 55%;
+  text-align: left;
+  padding: 0 5px ;
+  }
+
+.noticeTable .writer {
+  width: 15%;
+}
+
+.noticeTable .date {
+  width: 15%;
+}
+
+.noticeTable .hits {
+  width: 10%;
+}
+
+/* 이벤트 */
+.contentArea {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contentArea .eventBox {
+  width: 32%;
+  margin-bottom: 30px;
+}
+
+.contentArea .eventBox img {
+  width: 100%;
+}
+
+/* 문의사항 (FNQ) 페이지 */
+
+/* 문의사항 버튼 공통 */
+
+.writeBtn {
+  font-size: 12px;
+  padding: 15px;
+  background: #7324a1;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.writeBtn a {
+  color: #fff;
+}
+
+.FnQsetion {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.FnQsetion .btnBox {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.FnQsetion .contentBox {
+  padding: 20px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.FnQsetion .contentBox .flexBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px dotted #ccc;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.FnQsetion .contentBox .flexBox:hover {
+  background: #894aff17;
+}
+
+.FnQsetion .contentBox .answer {
+  padding: 10px 40px;
+  background: #894aff17;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px dotted #ccc;
+}
+
+/* 문의사항 작성 */
+.CSwriteSec .titleBox {
+  margin-bottom: 50px;
+}
+
+.CSwriteSec .flexBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CSwriteSec .flexBox .inputBox {
+  width: 100%;
+}
+
+.CSwriteSec .flexBox .inputBox input {
+  font-size: 16px;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.CSwriteSec .inputBox {
+  margin-bottom: 20px;
+}
+
+.CSwriteSec .inputBox textarea {
+resize: none;
+    width:100%;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.CSwriteSec .inputBox textarea::placeholder {
+  font-family: "NanumSquareNeo" !important;
+  font-size: 16px;
+}
+
+.CSwriteSec .btn {
+  display: flex;
+  justify-content: end;
+}
+
+.CSwriteSec .btn a {
+  font-size: 16px;
+  background: #7324a1;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #fff;
+  display: block;
+  width: 150px;
+  text-align: center;
+}
+
+.CSwriteSec .btn a input {
+background: transparent;
+  color: #fff;
+  outline:none;
+  border-width: 0;
+  border-style: none;
+  border-color: transparent;
+}
+
+/* 문의 확인 */
+.CScheckSec .titleBox {
+  margin-bottom: 40px;
+}
+
+.CScheckSec .btnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 21%;
+}
+
+.CSTable {
+  margin-bottom: 40px;
+}
+
+.CSTable tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.CSTable tr:first-child {
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+.CSTable tr td {
+  padding: 20px 0;
+}
+
+.CSTable .num {
+  width: 5%;
+  padding: 20px;
+}
+
+.CSTable .title {
+  width: 40%;
+  text-align: left;
+    padding: 20px;
+}
+
+.CSTable .writer {
+  width: 15%;
+    padding: 20px;
+}
+
+.CSTable .date {
+  width: 15%;
+    padding: 20px;
+}
+
+.CSTable .state {
+  width: 15%;
+    padding: 20px;
+}
+
+.CScheckSec .searchBox {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.CScheckSec .searchBox input {
+  width: 20%;
+  border: 0;
+  border-bottom: 1px solid #868686;
+  padding: 15px;
+  outline: none;
+}
+
+.CScheckSec .searchBox label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3f3f3f;
+}
+
+/* 전체 영화 일람 */
+
+.movieSection .contentBox {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.movieSection .contentCard {
+  width: 23%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+}
+
+.movieSection .contentCard .imgBox {
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.movieSection .contentCard .imgBox img {
+  width: 100%;
+}
+
+.movieSection .textBox {
+  line-height: 25px;
+  padding: 0 5px;
+}
+
+.movieSection .textBox .info {
+  font-size: 14px;
+}
+
+.movieSection .textBox .rate {
+  color: #ff1c73;
+  font-size: 14px;
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+/* 컬렉션 */
+
+.collectionSec .titleBox {
+  margin-bottom: 50px;
+}
+
+.collectionSec .subTitle {
+  font-size: 20px;
+}
+
+.collectionSec .content {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.collectionSec .categotyTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.collectionSec .flexBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+}
+
+.collectionSec a {
+  display: block;
+}
+
+.collectionSec .collectionBox {
+  width: 23%;
+}
+
+.collectionSec .collectionBox .imgBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #ccc;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.collectionSec .collectionBox .imgBox img {
+  width: 48%;
+  border-radius: 10px;
+}
+
+.MB8 {
+  margin-bottom: 8px;
+}
+
+.MR8 {
+  margin-right: 8px;
+}
+
+.collectionSec .btnBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+
+.collectionSec .btnBox .btn {
+  background: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 2px 3px #474747;
+  position: relative;
+  color: #868686;
+  transition: all 0.3s;
+  transform: translateY(-50%);
+}
+
+.collectionSec .btnBox .btn:hover {
+  color: #000;
+}
+
+.collectionSec .preBtn {
+  right: 15px;
+}
+
+.collectionSec .preBtn:hover {
+  right: 25px;
+}
+
+.collectionSec .nextBtn {
+  left: 15px;
+}
+
+.collectionSec .nextBtn:hover {
+  left: 25px;
+}
+
+
+/* 컬렉션 상세 페이지 */
+.colInfoSec .titleBox {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.colInfoSec .contentBox {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.colInfoSec .contentBox .content {
+  width: 16%;
+  margin: 20px;
+}
+
+.colInfoSec .contentBox .content .imgBox {
+  width: 100%;
+  height: 290px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.colInfoSec .contentBox .content .imgBox img {
+  width: 100%;
+}
+
+.colInfoSec .contentBox .content .txtBox .movieTitle {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.colInfoSec .contentBox .content .txtBox .movieTitle a {
+width: 100%;
+  white-space : nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.colInfoSec .contentBox .content .txtBox {
+  padding: 8px;
+}
+
+.colInfoSec .contentBox .content .txtBox .rateBox {
+  display: flex;
+  height: 20px;
+  line-height: 40px;
+}
+
+.colInfoSec .contentBox .content .txtBox .rateBox .movieRate {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.colInfoSec .contentBox .content .txtBox .rateBox .movieRate::before{
+    content: '★';
+}
+
+.colInfoSec .contentBox .content .txtBox .rateBox .rateCnt {
+  font-size: 13px;
+  color: #3f3f3f;
+}
+
+.colInfoSec .contentBox .content .txtBox .rateBox .rateCnt::before{
+content: '(';
+}
+
+.colInfoSec .contentBox .content .txtBox .rateBox .rateCnt::after {
+content: ')';
+}

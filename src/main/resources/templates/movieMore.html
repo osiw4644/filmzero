@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/movieInfo.css}" />
+  <link rel="stylesheet" th:href="@{/css/starRate.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/common.js}"></script>
+  <script th:src="@{/js/movieInfo.js}"></script>
+</th:block>
+<div layout:fragment="content">
+  <body>
+  <main class="main neo">
+    <div class="container" id="top">
+      <!-- 정보 섹션 -->
+      <section class="section infoMore" th:each="minfo: ${movieList}">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h2 class="jal">기본정보</h2>
+          </div>
+
+          <table class="infoTable">
+            <tr class="title">
+              <td>제목</td>
+              <td th:text="${minfo.movieNm}"></td>
+            </tr>
+
+            <tr class="date">
+              <td>개봉일</td>
+              <td th:text="${minfo.openDt}"></td>
+            </tr>
+
+            <tr class="country">
+              <td>제작 국가</td>
+              <td th:text="${minfo.nationNm}"></td>
+            </tr>
+
+            <tr class="genre">
+              <td>장르</td>
+              <td>
+                <ul class="genreList">
+                  <li th:text="${minfo.genreNm}"></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="time">
+              <td>러닝타임</td>
+              <td th:text="${minfo.showTm}"></td>
+            </tr>
+
+            <tr class="grade">
+              <td>연령 등급</td>
+              <td  th:text="${minfo.watchGrade}"></td>
+            </tr>
+          </table>
+
+          <div class="contentBox">
+            <h2>내용</h2>
+            <textarea id="content" class="neo" readonly th:text="${minfo.storyInfo}"></textarea>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="bottomUtill">
+    <div class="localBtn pointer">
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+
+    <div class="utillBtn pointer topBtn">
+      <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="utillBtn pointer eventBtn">
+      <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+    </div>
+
+    <div class="utillBtn pointer inquiryBtn">
+      <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+    </div>
+  </div>
+  </body>
+</div>
+</html>

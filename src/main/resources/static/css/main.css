@@ -1,0 +1,350 @@
+/* 메인페이지 */
+
+/* 비디오 영역 VIDEO */
+.videoSection {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.videoSection .contentWrap {
+  width: 100%;
+  background: #000;
+}
+
+.videoBox {
+  margin: 0 auto;
+  width: 70%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  top: -10px;
+}
+
+.videoBox video {
+  width: 100%;
+}
+
+.gradient {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 120px;
+  background: linear-gradient(
+    to right,
+    #000,
+    #000,
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    #000,
+    #000
+  );
+}
+
+.gradient .textBox {
+  color: #fff;
+  padding: 180px 300px;
+}
+
+.gradient .textBox div {
+  color: #000;
+  background: #fff;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.gradient .textBox .title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 3px #333;
+}
+
+.gradient .textBox .subTitle {
+  font-size: 20px;
+}
+
+/* 무비차트 영역 MovieChart */
+.movieChartSection {
+  margin-bottom: 80px;
+}
+
+.movieChartSection .contentWrap .titleBox {
+  margin-bottom: 0;
+}
+
+/* 슬라이드 설정 */
+.movieChartSection .chartContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.movieChartSection .chartSlider {
+  width: 250px;
+}
+
+.movieChartSection .chartSlider .imgBox {
+  width: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.movieChartSection .chartSlider img {
+  width: 100%;
+}
+
+.movieChartSection .chartSlider .txtBox a h2 {
+    white-space : nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movieChartSection .slideWrap {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-top: 20px;
+}
+
+.movieChartSection .btnBox {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  position: absolute;
+  top: calc(50% - 75px);
+}
+
+.movieChartSection .btnBox .btn {
+  position: relative;
+  background: #fff;
+  color: #666;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #666;
+  transition: all 0.2s;
+}
+
+.movieChartSection .btnBox .btn:hover {
+  color: #000;
+}
+
+.movieChartSection .btnBox .preBtn {
+  right: 20px;
+}
+
+.movieChartSection .btnBox .nextBtn {
+  left: 20px;
+}
+
+/* 텍스트 영역 설정 */
+.movieChartSection .txtBox {
+  line-height: 25px;
+  padding: 0 5px;
+}
+
+.movieChartSection .txtBox .releaseInfo {
+  font-size: 14px;
+  display: flex;
+}
+
+.movieChartSection .txtBox .releaseInfo .date::after {
+content : '·';
+padding: 0 5px;
+}
+
+.movieChartSection .txtBox .rateData {
+display: flex;
+}
+
+.movieChartSection .txtBox .rateData .rating {
+  color: #ff1c73;
+  font-size: 14px;
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+.movieChartSection .txtBox .rateData .rating::before {
+content: '★';
+padding: 0 5px;
+}
+
+/* 공지사항, 이벤트 섹션 */
+
+.noticeSection .contentWrap {
+  display: flex;
+}
+
+.noticeSection .contentWrap .flexBox {
+  width: 50%;
+  padding: 20px;
+}
+
+.noticeSection .contentWrap .flexBox .titleBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* 공지사항 탭 */
+
+.tablewrap {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+}
+
+.noticeTable tr {
+}
+
+.noticeTable tr td {
+    padding: 25px 0;
+    border-bottom: 1px solid #ccc
+}
+
+.noticeTable .num {
+  width: 10%;
+}
+
+.noticeTable .title {
+  width: 70%;
+  text-align: left;
+  white-space : nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.noticeTable .date {
+  width: 20%;
+  text-align: end;
+}
+
+/* 이벤트 탭 */
+.miniContainer {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.miniWrap {
+  width: 200%;
+}
+
+.mini-slide {
+  width: 50%;
+}
+
+.mini-slide img {
+  width: 100%;
+}
+
+.noticeSection .contentBox .btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.noticeSection .contentBox .btnBox .preBtnMini,
+.noticeSection .contentBox .btnBox .nextBtnMini {
+  position: absolute;
+  padding: 8px;
+  background: transparent;
+}
+
+.noticeSection .pagination {
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  top: -20px;
+}
+
+/* 컬렉션 영역 COLLECTION */
+
+/* 버튼 설정 */
+
+.collSection .slideWrap {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.collSection .btnBox {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.collSection .btnBox .btn {
+  position: relative;
+  background: #fff;
+  color: #666;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #666;
+  transition: all 0.2s;
+}
+
+.collSection .btnBox .btn:hover {
+  color: #000;
+}
+
+.collSection .btnBox .preBtn {
+  right: 10px;
+}
+
+.collSection .btnBox .nextBtn {
+  left: 10px;
+}
+
+/* 슬라이드 설정 */
+
+.colContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sldieContent {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.sldieContent .imgBox {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background: #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.sldieContent .imgBox img {
+  width: calc(50% - 10px);
+  border-radius: 10px;
+}
+
+.sldieContent .imgBox img:nth-child(1),
+.sldieContent .imgBox img:nth-child(2) {
+  margin-bottom: 5px;
+}
+
+.sldieContent .textBox {
+    line-height: 25px;
+}

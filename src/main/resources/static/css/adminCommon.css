@@ -1,0 +1,305 @@
+/* HEADER */
+
+.headerWrap {
+  z-index: 99;
+  background: #fff;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  position: fixed;
+  top: 0;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 5px #8d8d8d;
+}
+
+.headerWrap .navBox {
+  width: 40%;
+  height: 60px;
+  line-height: 60px;
+}
+
+.headerWrap .menuList {
+  text-align: center;
+  display: flex;
+  justify-content: start;
+}
+
+.headerWrap .menuList .menuTitle {
+  width: 25%;
+  text-align: center;
+}
+
+.headerWrap .logoBox {
+  text-align: center;
+  width: 20%;
+  height: 60px;
+}
+
+.headerWrap .logoBox img {
+  width: 40%;
+}
+
+.infoBox {
+  width: 20%;
+  text-align: end;
+  display: flex;
+  justify-content: end;
+  height: 60px;
+  line-height: 60px;
+}
+
+.alertBox {
+  margin-left: 20px;
+  font-size: 25px;
+  color: rgb(255, 193, 2);
+}
+
+.goHome {
+  position: relative;
+  top: 10px;
+}
+
+/* main */
+
+.main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section {
+  width: 100%;
+  margin: 50px auto;
+}
+
+.container {
+  padding-top: 120px;
+}
+
+/* TITLE 영역 (공통) */
+.titleBox {
+  margin: 50px 0;
+}
+.titleBox h1 {
+  font-size: 30px;
+}
+
+.titleBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 버튼 공통 */
+
+.btn a {
+  font-size: 16px;
+  background: #7324a1;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #fff;
+  display: block;
+}
+
+/* 테이블 공통 */
+table {
+  width: 100%;
+}
+
+table tr td {
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 관리 상세 페이지 테이블 공통 */
+
+.table tr:nth-child(odd) {
+  background: #fae6ff;
+}
+
+.table tr:first-child {
+  background: #a459b3;
+  color: #ffffff;
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+/* 공지사항 테이블 크기 조정 */
+
+.noticeTable .num {
+  width: 10%;
+}
+
+.noticeTable .title {
+  width: 30%;
+  text-align: left;
+}
+
+.noticeTable .content {
+  width: 50%;
+  text-align: left;
+}
+
+.noticeTable .date {
+  width: 10%;
+}
+
+/* 회원관리 테이블 크기 수정 */
+
+.memberTable .num {
+  width: 5%;
+}
+
+.memberTable .id {
+  width: 10%;
+}
+
+.memberTable .pw {
+  width: 13%;
+}
+
+.memberTable .name {
+  width: 12%;
+}
+
+.memberTable .nickname {
+  width: 10%;
+}
+
+.memberTable .birth {
+  width: 10%;
+}
+
+.memberTable .tel {
+  width: 13%;
+}
+
+.memberTable .point {
+  width: 12%;
+}
+
+.memberTable .btn_box {
+  width: 15%;
+}
+
+.memberTable .btnBox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.memberTable .btnBox .btn a {
+  padding: 0;
+  width: 40px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 2px solid #7324a1;
+  box-sizing: content-box;
+  background: transparent;
+  color: #000;
+}
+
+.memberTable .btnBox .btn a:hover {
+  border: 0;
+  background: #7324a1;
+  color: #fff;
+}
+
+/* 공지사항 등록 */
+.noticeSection .inputBox {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.noticeSection .inputBox input {
+  width: 98.2%;
+  border: 1px solid #cccccc;
+  font-size: 1.2rem;
+  padding: 10px;
+  outline: none;
+}
+.noticeSection .inputWrap .btn {
+  width: 10%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* 회원 정보 수정 */
+.modifySection .inputWrap {
+  width: 100%;
+  margin: 90px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modifySection .inputWrap .flexBox {
+  width: 45%;
+}
+
+.modifySection .inputWrap .inputBox {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.modifySection .inputWrap .inputBox label {
+  display: block;
+  width: 45%;
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.modifySection .inputWrap .inputBox input {
+  width: 45%;
+  margin-left: 70px;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.flexBox .btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.flexBox .btn a {
+  text-align: center;
+  width: 90px;
+}
+
+/* 페이징 버튼 */
+.paginationBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paginationBox .pageBtn {
+  padding: 0 3px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.paginationBox .numBtn {
+  display: flex;
+}
+
+.paginationBox .numBtn div {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 5px;
+}
+
+.paginationBox .numBtn .now {
+  background: #7324a1;
+  font-weight: 600;
+  color: #fff;
+}

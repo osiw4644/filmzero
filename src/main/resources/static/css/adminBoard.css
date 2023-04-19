@@ -1,0 +1,59 @@
+
+.boardSection .titleBox {
+  margin-bottom: 50px;
+}
+
+.boardSection .boradTitleBox {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.boardSection .boradTitleBox .title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.boardSection .subTitle {
+  display: flex;
+}
+
+.boardSection .subTitle .writer {
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.boardSection .subTitle .date {
+  padding-left: 20px;
+}
+
+.boardSection .subTitle p i {
+  margin-right: 5px;
+}
+
+.boardSection #content {
+  padding: 20px;
+  resize: none;
+  border: 0;
+  width: 100%;
+  height: 500px;
+  outline: none;
+  font-size: 18px;
+  font-family: "NanumSquareNeo" !important;
+}
+
+.boardSection .btnBox {
+  display: flex;
+  justify-content: end;
+}
+
+.boardSection .btnBox .btn {
+  padding: 0 10px;
+}
+
+.boardSection .btn a {
+  font-size: 16px;
+  background: transparent;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+}

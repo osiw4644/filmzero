@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/sub.css}" />
+  <link rel="stylesheet" th:href="@{/css/board.css}"/>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:inline="javascript">
+
+        $(document).ready(function(){
+            $("#searchBtn").on("click",function(e) {
+                e.preventDefault();
+                page(0);
+            });
+        });
+
+        function page(page){
+
+
+            location.href="/board/paging/" + page ;
+        }
+
+    </script>
+
+</th:block>
+<body>
+<div layout:fragment="content">
+  <form action="/board/save" method="post" enctype="multipart/form-data">
+    <main class="main neo">
+      <div class="container" id="top">
+        <section class="section CScheckSec">
+          <div class="contentWrap">
+
+
+            <div class="titleBox">
+              <h2 class="title jal">문의 확인</h2>
+              <div class="btnBox">
+                <div class="writeBtn">
+                  <a href="/board/save">문의 작성하기</a>
+                </div>
+                <div class="writeBtn">
+                  <a href="/board/inquiry">F&Q 확인하기</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contentBox">
+              <table class="CSTable">
+                <tr>
+                  <th class="num">번호</th>
+                  <th class="title">제목</th>
+                  <th class="writer">작성자</th>
+                  <th class="date">작성일</th>
+                  <th class="state">조회수</th>
+                </tr>
+                <tr th:each="board: ${boardList}">
+                  <td th:text="${board.id}"></td>
+                  <td><a th:href="@{|/board/${board.id}|(page=${boardList.number + 1})}" th:text="${board.boardTitle}"></a></td>
+                  <td th:text="${board.boardWriter}"></td>
+                  <td th:text="*{#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd')}"></td>
+                  <td th:text="${board.boardHits}"></td>
+                </tr>
+              </table>
+
+              <div  class="paginationBox"  th:with="start=${(boardList.number/maxPage)*maxPage + 1}, end=(${(boardList.totalPages == 0) ? 1 : (start + (maxPage - 1) < boardList.totalPages ? start + (maxPage - 1) : boardList.totalPages)})" >
+                <div class="pageBtn pointer" th:classappend="${boardList.first}?'disabled'">
+                  <a th:onclick="'javascript:page(' + ${boardList.number - 1} + ')'" aria-label='Previous' class="page-link">
+                    <i class="bi bi-chevron-left"></i>
+                  </a>
+                </div>
+
+
+                <div class="numBtn">
+                  <div class="pointer " th:each="page: ${#numbers.sequence(start, end)}" th:classappend="${boardList.number eq page-1}?'now':''">
+                    <a th:onclick="'javascript:page(' + ${page - 1} + ')'" th:inline="text" class="page-link">[[${page}]]</a>
+                  </div>
+                </div>
+
+                <div class="pageBtn pointer" th:classappend="${boardList.last}?'disabled'">
+                  <a th:onclick="'javascript:page(' + ${boardList.number + 1} + ')'" aria-label='Next' class="page-link">
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                </div>
+
+
+              </div>
+              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+  </form>
+
+
+
+
+  <div class="bottomUtill">
+    <div class="localBtn pointer">
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+
+    <div class="utillBtn pointer topBtn">
+      <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="utillBtn pointer eventBtn">
+      <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+    </div>
+
+    <div class="utillBtn pointer inquiryBtn">
+      <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+    </div>
+  </div>
+
+</div>
+</body>
+
+</html>

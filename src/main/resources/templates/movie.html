@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+
+
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+    <link rel="stylesheet" th:href="@{/css/sub.css}" />
+</th:block>
+<th:block layout:fragment="script">
+    <script th:src="@{/js/common.js}"></script>
+</th:block>
+<div layout:fragment="content">
+    <body>
+    <main class="main neo">
+        <div class="container" id="top">
+            <section class="section movieSection">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <h2 class="title jal">전체 영화</h2>
+                    </div>
+                </div>
+
+                <!-- 예시 영역임 -->
+                <div class="contentBox">
+                    <div class="contentCard">
+                        <a href="./movieInfo.html">
+                            <div class="imgBox">
+                                <img src="/image/main/chartEx/01.jpg" />
+                            </div>
+                            <div class="textBox">
+                                <p class="title">스즈메의 문단속</p>
+                                <p class="info">2022 · 일본</p>
+                                <p class="rate">평점 ★3.6</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="imgBox">
+                            <img src="/image/main/chartEx/01.jpg" />
+                        </div>
+
+                        <div class="textBox">
+                            <p class="title">스즈메의 문단속</p>
+                            <p class="info">2022 · 일본</p>
+                            <p class="rate">평점 ★3.6</p>
+                        </div>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="imgBox">
+                            <img src="./static/image/main/chartEx/01.jpg" />
+                        </div>
+
+                        <div class="textBox">
+                            <p class="title">스즈메의 문단속</p>
+                            <p class="info">2022 · 일본</p>
+                            <p class="rate">평점 ★3.6</p>
+                        </div>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="imgBox">
+                            <img src="./static/image/main/chartEx/01.jpg" />
+                        </div>
+
+                        <div class="textBox">
+                            <p class="title">스즈메의 문단속</p>
+                            <p class="info">2022 · 일본</p>
+                            <p class="rate">평점 ★3.6</p>
+                        </div>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="imgBox">
+                            <img src="./static/image/main/chartEx/01.jpg" />
+                        </div>
+
+                        <div class="textBox">
+                            <p class="title">스즈메의 문단속</p>
+                            <p class="info">2022 · 일본</p>
+                            <p class="rate">평점 ★3.6</p>
+                        </div>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="imgBox">
+                            <img src="./static/image/main/chartEx/01.jpg" />
+                        </div>
+
+                        <div class="textBox">
+                            <p class="title">스즈메의 문단속</p>
+                            <p class="info">2022 · 일본</p>
+                            <p class="rate">평점 ★3.6</p>
+                        </div>
+                    </div>
+
+                    <div class="contentCard">
+                        <div class="imgBox">
+                            <img src="./static/image/main/chartEx/01.jpg" />
+                        </div>
+
+                        <div class="textBox">
+                            <p class="title">스즈메의 문단속</p>
+                            <p class="info">2022 · 일본</p>
+                            <p class="rate">평점 ★3.6</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="bottomUtill">
+        <div class="localBtn pointer">
+            <i class="bi bi-geo-alt-fill"></i>
+        </div>
+
+        <div class="utillBtn pointer topBtn">
+            <a href="#top"><i class="bi bi-arrow-up"></i></a>
+        </div>
+
+        <div class="utillBtn pointer eventBtn">
+            <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+        </div>
+
+        <div class="utillBtn pointer inquiryBtn">
+            <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+        </div>
+    </div>
+    </body>
+</div>
+</html>

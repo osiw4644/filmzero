@@ -1,0 +1,812 @@
+/* 섹션 공통 사항 */
+.infoMain .section .contentWrap .titleBox {
+  font-size: 25px;
+}
+
+.infoMain .section {
+  border-bottom: 1px solid #ccc;
+  padding: 0 20px;
+}
+
+.infoMain .section:last-child {
+  border-bottom: 0;
+}
+
+.more {
+  font-size: 18px;
+}
+
+.more a {
+  color: rgb(113, 27, 184);
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+.slide {
+  width: 100%;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.btnBox .btn {
+  width: 25px;
+  height: 25px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 23px;
+  background: #fff;
+  box-shadow: 1px 1px 5px #777;
+  color: #777;
+  transition: all 0.3s;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  z-index: 10;
+
+  cursor: pointer;
+}
+
+.btnBox .btn:hover {
+  color: #000;
+}
+
+.btnBox .preBtn {
+  left: -25px;
+}
+
+.btnBox .preBtn:hover {
+  left: -30px;
+}
+
+.btnBox .nextBtn {
+  right: -25px;
+}
+
+.btnBox .nextBtn:hover {
+  right: -30px;
+}
+
+.colorRed {
+  color: #ff3636;
+}
+
+/* SECTION TOP 섹션 탑 :: 기본정보 */
+
+.topSection {
+  width: 100%;
+  overflow: hidden;
+}
+
+.topSection .contentWrap {
+  position: relative;
+  height: 450px;
+  top: 0;
+  left: 0;
+}
+
+.topSection .contentWrap .imgBox {
+  width: 100%;
+  overflow: hidden;
+}
+
+.topSection .contentWrap .imgBox img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topSection .contentBox {
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+    #000,
+    #000,
+    #000,
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0),
+    #000,
+    #000,
+    #000
+  );
+  color: #fff;
+
+  position: absolute;
+  top: 0;
+
+  display: flex;
+}
+
+.topSection .contentBox .txtBox {
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.topSection .contentBox .txtBox .titleWrap {
+  margin-bottom: 20px;
+}
+
+.topSection .contentBox .txtBox .titleWrap .title {
+  font-size: 40px;
+}
+
+.topSection .contentBox .txtBox .titleWrap .subTitle {
+  font-size: 20px;
+}
+
+.topSection .contentBox .txtBox .infoBox .released {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.topSection .contentBox .txtBox .infoBox .released .date {
+  padding-right: 10px;
+  border-right: 1px solid #fff;
+}
+
+.topSection .contentBox .txtBox .infoBox .released .country {
+  padding-left: 10px;
+}
+
+.topSection .contentBox .txtBox .infoBox .genre {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.topSection .contentBox .txtBox .infoBox .genre li::after {
+  content: "/";
+}
+
+.topSection .contentBox .txtBox .infoBox .genre li:last-child::after {
+  content: "";
+}
+
+.topSection .contentBox .txtBox .infoBox .rate {
+  font-size: 18px;
+  color: #ff3995;
+  margin-bottom: 20px;
+}
+
+.topSection .contentBox .posterBox {
+  height: 85%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px #000000;
+
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+}
+
+.topSection .contentBox .posterBox img {
+  height: 100%;
+}
+
+/* rateSection 평가 섹션 */
+
+.rateSection {
+  border-bottom: 0 !important;
+}
+
+.rateSection .rateInfo {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+
+  margin-bottom: 20px;
+}
+
+.rateSection .rateInfo .infoBox {
+  width: 27%;
+  padding: 0 20px;
+}
+
+.rateSection .rateInfo .infoBox:first-child {
+  width: 15%;
+}
+
+.rateSection .rateInfo .infoBox h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.rateSection .rateInfo .infoBox .infoContent {
+  display: flex;
+  color: #777;
+  height: 55px;
+  line-height: 55px;
+}
+
+.rateSection .rateInfo .infoBox .infoContent i {
+  font-size: 50px;
+}
+
+.rateSection .rateInfo .infoBox .infoContent p {
+  padding: 0 3px 0 5px;
+
+  font-size: 30px;
+  color: rgb(104, 39, 255);
+}
+
+.rateSection .rateInfo .infoBox .infoContent .txtBox {
+  display: flex;
+}
+
+.rateSection .rateInfo .infoBox .infoContent .subtxt {
+  font-size: 16px;
+  color: #777;
+  line-height: 60px;
+}
+
+.rateSection .myRate {
+  padding: 20px;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+
+.rateSection .myRate div h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.rateSection .myRate .rateBox {
+  height: 42px;
+  position: relative;
+}
+
+.rateSection .myRate .rateBox .scoreBox {
+  padding-left: 20px;
+  font-size: 25px;
+
+  position: absolute;
+  top: 50%;
+  left: 18%;
+
+  transform: translateY(-50%);
+}
+
+.rateSection .comement {
+  display: none;
+}
+
+.rateSection .comementBox {
+  margin: 20px 0;
+  padding: 20px 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.rateSection .comement .commentBtn {
+  margin-top: 15px;
+  padding: 10px;
+  width: 10%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+/* 코멘트 남기기 모달창 디자인 */
+.commentInput {
+  z-index: 99;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000000b2;
+
+  display: none;
+}
+
+.commentInput .inputBox {
+  background: #fff;
+  width: 480px;
+  height: 500px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.commentInput .commentTop {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.commentInput .closeBtn {
+  background: #cccccc71;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.commentInput textarea {
+  resize: none;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  font-family: "NanumSquareNeo" !important;
+  width: 100%;
+  height: calc(100% - 100px);
+  line-height: 20px;
+  margin: 10px 0;
+}
+
+.commentInput .inputBottom {
+  display: flex;
+  justify-content: end;
+  height: 30px;
+  line-height: 30px;
+}
+
+.commentInput .inputBottom .cntBox {
+  display: flex;
+  font-size: 13px;
+  position: relative;
+}
+
+.commentInput .inputBottom .cntBox .textCnt {
+  font-size: 15px;
+}
+
+.commentInput .inputBottom .saveBtn {
+  margin-left: 20px;
+  background: #7324a1;
+  width: 45px;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 내 코멘트 출력 */
+
+.myComment {
+  margin: 20px;
+  display: none;
+}
+
+.myComment .commentWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.myComment .imgBox {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20px;
+
+  position: relative;
+}
+
+.myComment .imgBox img {
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.myComment p {
+  /* 말줄임표 */
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  height: 70px;
+  line-height: 70px;
+}
+
+.myComment .btnBox {
+  width: calc(20% - 70px);
+  display: flex;
+  justify-content: right;
+  color: #777;
+  height: 70px;
+  line-height: 70px;
+}
+
+.myComment .btnBox div i {
+  margin-right: 7px;
+}
+
+.myComment .btnBox .delBtn {
+  margin-left: 20px;
+}
+
+/* commentSection 코멘트 섹션 */
+
+.commentSection .commentBox {
+  padding: 20px;
+  border-radius: 20px;
+  background: #ebdaff85;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.commentSection .commentSlide .userBox {
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #77777341;
+
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.commentSection .commentSlide .userBox .userImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.commentSection .commentSlide .userBox .userNick {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.commentSection .commentSlide .userBox .userImg img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.commentSection .commentSlide .commentContent {
+  margin: 15px 0;
+  height: 150px;
+  line-height: 25px;
+  overflow: hidden;
+
+  /* 말줄임표 만들기 */
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.commentSection .commentSlide .socialBox {
+  display: flex;
+  justify-content: end;
+  font-size: 20px;
+  color: #777;
+}
+
+.commentSection .commentSlide .socialBox .heartBtn {
+  margin-right: 20px;
+  font-size: 21px;
+}
+
+.commentSection .commentSlide .socialBox .heartBtn span {
+  position: relative;
+  top: -2px;
+  font-size: 16px;
+}
+
+.commentSection .commentSlide .socialBox .heartBtn i:hover {
+  color: #ff3636;
+}
+
+/* infoSection :: 기본정보 섹션 */
+
+.infoSection .contentBox {
+  padding: 20px;
+  line-height: 30px;
+}
+
+.infoSection .contentBox .flexList {
+  display: flex;
+}
+
+.infoSection .contentBox .flexList .dot {
+  padding: 0 10px;
+}
+
+.infoSection .contentBox .story {
+  resize: none;
+  outline: none;
+  width: 100%;
+  height: 150px;
+  border: 0;
+  font-size: 16px;
+  margin-top: 20px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* staffSection :: 스태프, 출연자 정보 섹션 */
+.staffSection .staffContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.staffSection .staffContent .staffBox {
+  width: 23%;
+}
+
+.staffSection .staffContent .staffBox .flexBox {
+  display: flex;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 1px 1px 5px #ddd;
+
+  position: relative;
+}
+
+.staffSection .staffContent .staffBox .staffImg {
+  width: 25%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.staffSection .staffContent .staffBox .staffImg img {
+  width: 100%;
+}
+
+.staffSection .staffContent .staffBox .staffInfo {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translateY(-50%);
+}
+
+.staffSection .staffContent .staffBox .staffInfo .role {
+  color: #777;
+}
+
+/* trailerSetion :: 트레일러 섹션 */
+
+.trailerSetion .trailerContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.trailerSetion .slide {
+  position: relative;
+}
+
+.trailerContainer .trailerSlide .imgBox {
+  position: relative;
+  margin: 20px 0 10px 0;
+}
+
+.trailerContainer .trailerSlide .imgBox img {
+  width: 100%;
+}
+
+.trailerContainer .trailerSlide .imgBox .button {
+  z-index: 20;
+  padding: 8px 20px;
+  background: red;
+  border-radius: 5px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 20px;
+  color: #fff;
+}
+
+.trailerContainer .trailerSlide .txtBox {
+  text-align: center;
+}
+
+/* 갤러리 섹션 */
+
+.GallerySeiton .galleryContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.GallerySeiton .galleryslide .imgBox {
+  margin-top: 20px;
+}
+
+.GallerySeiton .galleryslide .imgBox img {
+  width: 100%;
+}
+
+/* 모달 슬라이드 */
+.GallerySeiton .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background: #000000b2;
+}
+
+.GallerySeiton .modal .modalClose {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  z-index: 100;
+  color: #fff;
+  font-size: 50px;
+}
+
+.GallerySeiton .modal .slide {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.GallerySeiton .modal .slide .imgBox {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 3.5%;
+}
+
+.GallerySeiton .modal .slide .imgBox img {
+  width: 100%;
+}
+
+/* CollectionSection :: 컬렉션 섹션 */
+
+.CollectionSection .collectionWrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.CollectionSection .collectionWrap .collectionBox {
+  width: 20%;
+}
+
+.CollectionSection .collectionWrap .collectionBox .imgBox {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  background-color: #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.CollectionSection .collectionWrap .collectionBox .imgBox img {
+  width: 50%;
+  border-radius: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* anotherSection :: 비슷한 영화 섹션 */
+.anotherSection .anotherWrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.anotherSection .anotherWrap .movieBox {
+  width: 18%;
+  margin-bottom: 50px;
+}
+
+.anotherSection .anotherWrap .movieBox .imgBox {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.anotherSection .anotherWrap .movieBox .imgBox img {
+  width: 100%;
+}
+
+/* MovieMore :: 새 창에서 열리는 기본 정보 상세 */
+
+.infoMore .titleBox {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.infoMore .infoTable {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.infoMore .infoTable tr {
+  border-bottom: 1px solid #cccccc71;
+}
+
+.infoMore .infoTable tr td {
+  padding: 15px;
+}
+
+.infoMore .infoTable tr td:first-child {
+  width: 20%;
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+.infoMore .infoTable tr td:last-child {
+  width: 80%;
+}
+
+.infoMore .infoTable ul {
+  display: flex;
+}
+
+.infoMore .infoTable ul li::after {
+  content: "/";
+}
+
+.infoMore .infoTable ul li:last-child::after {
+  content: "";
+}
+
+.infoMore .contentBox {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.infoMore .contentBox h2 {
+  margin-bottom: 15px;
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+.infoMore .contentBox #content {
+  resize: none;
+  width: 100%;
+  height: 215px;
+  font-size: 15px;
+  border: 0;
+  outline: none;
+  padding: 0 15px;
+}
+

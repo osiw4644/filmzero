@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/collection.js}"></script>
+</th:block>
+
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+    <link rel="stylesheet" th:href="@{/css/sub.css}" />
+</th:block>
+
+<div layout:fragment="content">
+    <body>
+    <main class="main neo">
+        <div class="container" id="top">
+            <section class="section colInfoSec">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <h2 class="title jal">순식간에 서늘해지는 공포시리즈 무서운게딱좋아!</h2>
+                    </div>
+
+                    <div class="contentBox">
+                        <!-- 여기서부터 반복 -->
+                        <div class="content" th:each="movie6: ${movieList6}">
+                            <div class="imgBox">
+                                <a th:href="@{|/movie/de/${movie6.id}}">
+                                    <img
+                                            th:src="${movie6.movieImg_main}"
+                                            class="posterImg"
+                                    />
+                                </a>
+                            </div>
+                            <div class="txtBox">
+                                <p class="movieTitle">
+                                    <a th:href="@{|/movie/de/${movie6.id}}" th:text="${movie6.movieNm}"></a>
+                                </p>
+                                <div class="rateBox">
+                                    <p class="movieRate themeP" th:text="${movie6.star_avg}"></p>
+                                    <p class="rateCnt" th:text="${movie6.star_person}"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 반복 끝 -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="bottomUtill">
+        <div class="localBtn pointer">
+            <i class="bi bi-geo-alt-fill"></i>
+        </div>
+
+        <div class="utillBtn pointer topBtn">
+            <a href="#top"><i class="bi bi-arrow-up"></i></a>
+        </div>
+
+        <div class="utillBtn pointer eventBtn">
+            <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+        </div>
+
+        <div class="utillBtn pointer inquiryBtn">
+            <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+        </div>
+    </div>
+    </body>
+</div>
+</html>

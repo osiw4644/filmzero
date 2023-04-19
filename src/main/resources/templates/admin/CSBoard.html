@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/sub.css}" />
+  <link rel="stylesheet" th:href="@{/css/board.css}"/>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/main.js}"></script>
+  <script th:inline="javascript">
+function commentWrite(){
+        var token = $("meta[name='_csrf']").attr("content");
+        var header = $("meta[name='_csrf_header']").attr("content");
+
+        const commentWrite = [[${commentWrite}]];
+
+        const contents = document.getElementById('commentContents').value;
+
+
+        console.log("내용: ", contents);
+        const id = [[${board.id}]];
+
+        var paramData={
+               commentContents: contents,
+               boardId: id
+               };
+         var param = JSON.stringify(paramData);
+        $.ajax({
+                url      : '/comment/save',
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                beforeSend : function(xhr){
+                    /* 데이터를 전송하기 전에 헤더에 csrf값을 설정 */
+                    xhr.setRequestHeader(header, token);
+                },
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+                    alert("댓글 완료. ");
+                     $("#comment_table").append("<tr><td>"+contents+"</td></tr>");
+                },
+                error : function(jqXHR, status, error){
+                        alert('로그인 후 이용해주세요');
+                }
+
+
+        });
+
+    }
+
+    const listReq = () => {
+        console.log("목록 요청");
+        const page = [[${page}]];
+        location.href = "/board/paging?page="+page;
+    }
+    const updateReq = () => {
+        console.log("수정 요청");
+        const id = [[${board.id}]];
+        location.href = "/board/update/" + id;
+    }
+    const deleteReq = () => {
+        console.log("삭제 요청");
+        const id = [[${board.id}]];
+        location.href = "/board/delete/" + id;
+    }
+     /*]]>*/
+</script>
+
+
+</th:block>
+<body>
+<div layout:fragment="content">
+  <form action="/admin/save" method="post" enctype="multipart/form-data">
+    <main class="main neo">
+      <div class="container" id="top">
+        <section class="section boardSection">
+          <div class="contentWrap">
+            <div class="titleBox">
+              <h2 class="title jal">문의사항</h2>
+
+              <div class="btnBox">
+                <div class="writeBtn">
+                  <a href="/board/save">문의 작성하기</a>
+                </div>
+                <div class="writeBtn">
+                  <a href="/board/inquiry">F&Q 확인하기</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contentBox">
+              <!-- 게시글 정보 -->
+              <div class="boradTitleBox">
+                <h1 class="title neoB"><span th:text="${board.boardTitle}"></span></h1>
+                <div class="subTitle">
+                  <p class="writer"><i class="bi bi-person"></i><span th:text="${board.boardWriter}"></span></p>
+                  <p class="date"><i class="bi bi-clock"></i><span th:text="${board.boardCreatedTime}"></span></p>
+                </div>
+              </div>
+
+              <!-- 게시글 내용 -->
+              <div class="boardContent">
+                <div th:text="${board.boardContents}" name="content" id="content" readonly>
+
+                </div>
+
+                <!-- 첨부파일 있을 경우 아래 박스에 출력 -->
+                <div class="imgBox">
+                  <div th:if="${board.fileAttached == 1}">
+                    <img th:src="@{|/images/${board.storedFileName}|}" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 댓글 출력, 오래된 순으로 표기 -->
+              <div id="comment-list" class="commentList">
+                <table id="comment_table" class="commentTable">
+                  <tr th:each="comment: ${commentList}">
+                    <!-- 내용 고정 -->
+                    <td class="admin">admin</td>
+
+                    <!-- 내용, 날짜 출력 부분 -->
+                    <td th:text="${comment.commentContents}" class="content">
+                      <div class=""></div>
+                    </td>
+                    <td
+                            th:text="${comment.commentCreatedTime}"
+                            class="date"
+                    ></td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- 댓글 작성 부분 -->
+              <!-- 로그인된 아이디가 관리자인 경우 -->
+              <div id="comment-write" class="commentWrite">
+                <input
+                        type="text"
+                        id="commentContents"
+                        placeholder="내용을 입력하세요"
+                />
+                <button
+                        type="button"
+                        id="comment-write-btn"
+                        class="commentWriteBtn pointer neo"
+                        onclick="commentWrite()"
+                >
+                  등록
+                </button>
+              </div>
+
+              <!-- 관리자가 아닌 경우 -->
+              <div class="notAdmin">
+                <input
+                        class="neo"
+                        type="text"
+                        id="comment"
+                        name="comment"
+                        placeholder="🔒︎ 덧글 입력 권한이 없습니다."
+                        readonly
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+  </form>
+  <button onclick="listReq()">목록</button>
+  <button onclick="updateReq()">수정</button>
+  <button onclick="deleteReq()">삭제</button>
+</div>
+
+
+</body>
+
+</html>
+
+
+

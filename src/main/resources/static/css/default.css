@@ -1,0 +1,60 @@
+/* FONT */
+@import url("https://webfontworld.github.io/goodchoice/Jalnan.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap");
+
+/* noto */
+.noto {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 나눔 스퀘어 네오 */
+
+.neo {
+  font-family: "NanumSquareNeo" !important;
+}
+
+.neoL {
+  font-family: "NanumSquareNeoLight" !important;
+}
+
+.neoB {
+  font-family: "NanumSquareNeoBold" !important;
+}
+
+.neoT {
+  font-family: "NanumSquareNeoExtraBold" !important;
+}
+
+/* 잘난체 */
+.jal {
+  font-family: "Jalnan" !important;
+}
+
+/* COLOR */
+.themeB {
+  color: #71d2ff !important;
+}
+
+.themeP {
+  color: #d42975 !important;
+}
+
+.themeW {
+  color: rgb(255, 193, 2) !important;
+}
+
+/* etc */
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.disFlex {
+  display: flex !important;
+}
+
+/* 스크롤바 커스텀 */
+
+::-webkit-scrollbar {
+  display: none;
+}

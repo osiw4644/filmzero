@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FILM ZER0</title>
+
+    <!-- ICON -->
+    <link rel="shortcut icon" href="/image/favicon.png" />
+
+    <!-- JS -->
+    <script
+            src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" th:href="@{/css/reset.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+
+    <script th:src="@{/js/common.js}"></script>
+
+    <!-- FONT -->
+    <link
+            href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css"
+            rel="stylesheet"
+    />
+
+    <!-- 부트스트랩 CDN -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Swiper Slider -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <th:block layout:fragment="script"></th:block>
+    <th:block layout:fragment="css"></th:block>   <!-- th:block는 특정 html에 사용하겠다. -->
+</head>
+<body>
+<div th:replace="admin/adminHeader::adminHeader"></div>
+<div layout:fragment="content" class="content"></div>
+<div th:replace="admin/adminFooter::adminFooter"></div>
+</body>
+</html>

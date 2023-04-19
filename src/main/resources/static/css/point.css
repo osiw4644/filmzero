@@ -1,0 +1,276 @@
+.myPointSec {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.myPointSec .contentWrap {
+  width: 100%;
+}
+
+.myPointSec .contentWrap .myPoint {
+  background: url(../image/background.jpg);
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+
+.myPointSec .contentWrap .myPoint p {
+  font-size: 18px;
+}
+
+.myPointSec .contentWrap .myPoint h2 {
+  font-size: 35px;
+  margin: 10px 0 45px 0;
+}
+
+.myPointSec .contentWrap .myPoint i {
+  margin-right: 10px;
+}
+
+.myPointSec .contentWrap .myPoint .pointInfo {
+  display: flex;
+  justify-content: left;
+}
+
+.myPointSec .contentWrap .myPoint .pointInfo .infoBox:first-child {
+  padding-right: 20px;
+  border-right: 1px solid #ffffff79;
+}
+
+.myPointSec .contentWrap .myPoint .pointInfo .infoBox:last-child {
+  padding-left: 20px;
+}
+
+.myPointSec .contentWrap .myPoint .pointInfo .infoBox p:first-child {
+  margin-bottom: 15px;
+}
+
+.myPointSec .contentWrap .myPoint .pointInfo .infoBox p:last-child {
+  font-size: 20px;
+}
+
+/* giftList :: 기프트샵 슬라이드 */
+
+.giftList {
+  width: 100vw;
+}
+
+.giftList .titleBox {
+  width: 50%;
+  margin: 50px auto;
+}
+
+.giftList .titleBox .more a {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.giftList .titleBox .more a i {
+  margin-right: 5px;
+  font-size: 25px;
+  color: rgb(255, 80, 103);
+}
+
+.giftList .giftSlide {
+  width: 100%;
+  position: relative;
+}
+
+.giftList .giftShopContainer .imgBox {
+  width: 100%;
+  text-align: center;
+}
+
+.giftList .giftShopContainer img {
+  width: 90%;
+}
+
+.giftList .gradient {
+  height: 100%;
+  background: rgb(255, 255, 255, 0.7);
+  z-index: 10;
+  position: absolute;
+}
+
+.giftList .gradientL {
+  width: calc(100% - 1180px);
+}
+
+.giftList .gradientR {
+  width: calc(100% - 1180px);
+  right: 0;
+}
+
+.giftList .btnBox {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 11;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.giftList .btnBox .btn {
+  background: #fff;
+  padding: 13px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 3px 3px 6px #55555593;
+  position: relative;
+  color: #868686;
+  transition: all 0.3s;
+}
+
+.giftList .btnBox .btn:hover {
+  color: #000;
+}
+
+.giftList .btnBox .btn i {
+  display: block;
+}
+
+.giftList .btnBox .preBtn {
+  right: 0;
+}
+
+.giftList .btnBox .nextBtn {
+  left: 0;
+}
+
+.giftList .btnBox .preBtn:hover {
+  right: 10px;
+}
+
+.giftList .btnBox .nextBtn:hover {
+  left: 10px;
+}
+
+/* 포인트 획득 방법 */
+
+.gainPoint {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.gainPoint .content {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.gainPoint .contentBox {
+  width: 50%;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 50px 0;
+}
+
+.gainPoint .contentBox i {
+  font-size: 40px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.gainPoint .contentBox .subtxt {
+  font-size: 16px;
+  margin-top: 20px;
+  line-height: 20px;
+}
+
+.gainPoint .contentBox .flexBox {
+  display: flex;
+}
+
+.gainPoint .contentBox .imgBox {
+  width: 40px;
+}
+
+.gainPoint .contentBox .imgBox img {
+  width: 100%;
+}
+
+/* giftShop :: 기프트샵 */
+
+.giftShop .titleBox {
+  margin-bottom: 50px;
+}
+
+.giftShop .category {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.giftShop .category .categoryBox {
+  width: 28%;
+  text-align: center;
+  line-height: 150px;
+  height: 150px;
+  font-size: 25px;
+  letter-spacing: 4px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+  transition: all 0.5s;
+  margin-bottom: 30px;
+}
+
+.giftShop .category .ottBox {
+  background: #c9b9fd;
+}
+
+.giftShop .category .movieBox {
+  background: #e7abe8;
+}
+
+.giftShop .category .vodBox {
+  background: #dd8dcc;
+}
+
+.giftShop .product {
+  width: 100%;
+}
+
+.giftShop .flexBox {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px 10px;
+}
+
+.giftShop .productBox .proCard .imgBox {
+  width: 100%;
+}
+
+.giftShop .productBox .proCard .imgBox img {
+  width: 100%;
+}
+
+.giftShop .productBox .proCard .txtBox {
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.giftShop .productBox .proCard .txtBox .proName {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.giftShop .productBox .proCard .txtBox p i {
+  margin-right: 5px;
+}
+
+.giftShop .productBox .proCard .btn {
+  padding: 10px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #000;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 30%;
+}

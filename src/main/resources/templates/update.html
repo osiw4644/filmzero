@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/summerNote/summernote-lite.css}"/>
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/sub.css}" />
+  <link rel="stylesheet" th:href="@{/css/board.css}"/>
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/main.js}"></script>
+  <script th:src="@{/js/summerNote/summernote-lite.js}"></script>
+  <script th:src="@{/js/summerNote/lang/summernote-ko-KR.js}"></script>
+
+  <script th:src="@{/js/summerNote.js}"></script>
+  <script th:inline="javascript">
+
+  </script>
+</th:block>
+<body>
+<div layout:fragment="content">
+  <form action="/board/update" method="post" enctype="updateForm" th:object="${boardUpdate}">
+    <input type="hidden" th:field="*{id}">
+    <input type="hidden" name="boardWriter" th:value="${boardUpdate.boardWriter}">
+    <main class="main neo">
+      <div class="container" id="top">
+        <section class="section CSwriteSec">
+          <div class="contentWrap">
+            <div class="titleBox">
+              <h2 class="title jal">게시글 수정</h2>
+            </div>
+
+
+            <div class="contentBox">
+              <div class="flexBox">
+                <div class="inputBox">
+                  <input type="text" name="boardTitle" id="title" th:value="${boardUpdate.boardTitle}" placeholder="제목을 입력하세요" >
+                </div>
+              </div>
+
+
+
+              <div class="inputBox">
+                <textarea name="boardContents" id="summerNote" th:text="${boardUpdate.boardContents}" placeholder="내용을 입력하세요" ></textarea> <br>
+              </div>
+
+
+              <div class="btn neo">
+                <input type="submit" value="글수정" >
+                <!--                                <a href="/board/paging">수정</a>-->
+                <!--                                <input type="submit" value="수정">-->
+              </div>
+              <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}">
+              <input type="hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}">
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+  </form>
+</div>
+</body>
+</html>
+<!--<form action="/board/update" method="post" name="updateForm">-->
+<!--  <input type="hidden" name="id" th:value="${boardUpdate.id}">-->
+<!--    <div class="inquiryUpdate">-->
+<!--        제목및내용수정: <input type="text" name="boardTitle" th:value="${boardUpdate.boardTitle}"><br>-->
+<!--        <textarea name="boardContents" cols="40" rows="10" th:text="${boardUpdate.boardContents}"></textarea>-->
+<!--    </div>-->
+<!--    <input type="button" value="글수정" onclick="boardUpdate()">-->
+<!--    <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}">-->
+<!--    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->

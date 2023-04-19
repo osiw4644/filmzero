@@ -1,0 +1,165 @@
+/* 문의 게시글 페이지*/
+.writeBtn {
+  font-size: 16px;
+  padding: 15px;
+  background: #7324a1;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.writeBtn a {
+  color: #fff;
+}
+
+.boardSection .titleBox {
+  margin-bottom: 50px;
+}
+
+.boardSection .btnBox {
+  display: flex;
+  width: 21%;
+  justify-content: space-between;
+}
+
+.boardSection .boradTitleBox {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.boardSection .boradTitleBox .title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.boardSection .subTitle {
+  display: flex;
+}
+
+.boardSection .subTitle .writer {
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.boardSection .subTitle .date {
+  padding-left: 20px;
+}
+
+.boardSection .subTitle p i {
+  margin-right: 5px;
+}
+
+.boardContent {
+  padding: 10px;
+}
+
+.boardSection #content {
+  padding: 20px 0;
+  resize: none;
+  border: 0;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  font-family: "NanumSquareNeo" !important;
+}
+
+#content::-webkit-scrollbar {
+  display: none;
+}
+
+/* 리스트 버튼*/
+.utilBox {
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+.utilBox .utilbtn {
+  padding: 10px;
+  margin: 0 5px;
+  background: #333;
+  font-size: 14px;
+}
+
+.utilBox .utilbtn a {
+  color: #fff;
+}
+
+.utilBox .utilbtn i {
+  margin-right: 3px;
+}
+
+/* CSBoard 클래스 수정 */
+
+.commentTable {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.commentTable tr {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.commentTable tr td {
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.commentTable tr .admin {
+  width: 10%;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.commentTable tr .content {
+  text-align: left;
+}
+
+.commentTable tr .date {
+  width: 10%;
+}
+
+.commentWrite {
+  width: 100%;
+  position: relative;
+  height: 70px;
+}
+
+.commentWrite input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.notAdmin input {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: 70px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.commentWrite input::placeholder,
+.notAdmin input::placeholder {
+  font-size: 16px;
+}
+
+.commentWrite .commentWriteBtn {
+  border-radius: 8px;
+  border: 0;
+  background: #d4d4d4;
+  padding: 10px;
+  font-size: 15px;
+
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}

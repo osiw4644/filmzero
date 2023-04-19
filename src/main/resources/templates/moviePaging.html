@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>movieInfoList</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화코드</th>
+    <th>영화제목(국문)</th>
+    <th>영화이름(영문)</th>
+    <th>상영시간</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+    <th>감독명</th>
+    <th>상영등급</th>
+    <th>줄거리</th>
+    <th>별점평균</th>
+    <th>평가인원</th>
+    <th>섬네일</th>
+    <th>누적관객</th>
+    <th>누적매출액</th>
+
+  </tr>
+  <tr th:each="minfo, st:${movieList.getContent()}">
+    <td th:text="${minfo.id}"></td>
+    <td th:text="${minfo.movieCd}"></td>
+    <td th:text="${minfo.movieNm}"></td>
+    <td th:text="${minfo.movieNmEn}"></td>
+    <td th:text="${minfo.showTm}"></td>
+    <td th:text="${minfo.openDt}"></td>
+    <td th:text="${minfo.nationNm}"></td>
+    <td th:text="${minfo.genreNm}"></td>
+    <td th:text="${minfo.directorNm}"></td>
+    <td th:text="${minfo.watchGrade}"></td>
+    <td th:text="${minfo.storyInfo}"></td>
+    <td th:text="${minfo.star_avg}"></td>
+    <td th:text="${minfo.star_person}"></td>
+    <td><img th:src="${minfo.movieImg_main}"></td>
+    <td th:text="${minfo.audiAcc}"></td>
+    <td th:text="${minfo.salesAcc}"></td>
+  </tr>
+</table>
+
+<!-- 첫번째 페이지로 이동 -->
+<!-- /board/paging?page=1 -->
+
+<a th:href="@{/movie/do(page=1)}"><<</a>
+
+
+<!-- 이전 링크 활성화 비활성화 -->
+<!-- boardList.getNumber() 사용자:2페이지 getNumber()=1 -->
+<a th:href="${movieList.first} ? '#' : @{/movie/do(page=${movieList.number})}">이전</a>
+
+<!-- 페이지 번호 링크(현재 페이지는 숫자만)
+        for(int page=startPage; page<=endPage; page++)-->
+<span th:each="page: ${#numbers.sequence(startPage, endPage)}">
+                    <!-- 현재페이지는 링크 없이 숫자만 -->
+                     <span th:if="${page == movieList.number + 1}" th:text="${page}"></span>
+  <!-- 현재페이지 번호가 아닌 다른 페이지번호에는 링크를 보여줌 -->
+                    <span th:unless="${page == movieList.number + 1}">
+                        <a th:href="@{/movie/do(page=${page})}" th:text="${page}"></a>
+                    </span>
+                </span>
+
+<!-- 다음 링크 활성화 비활성화
+    사용자: 2페이지, getNumber: 1, 3페이지-->
+<a th:href="${movieList.last} ? '#' : @{/movie/do(page=${movieList.number + 2})}">다음</a>
+<!-- 마지막 페이지로 이동 -->
+<a th:href="@{/movie/do(page=${movieList.totalPages})}">>></a>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+</body>
+</html>

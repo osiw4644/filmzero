@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/point.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/common.js}"></script>
+  <script th:src="@{/js/point.js}"></script>
+</th:block>
+<div layout:fragment="content">
+  <body>
+  <main class="main neo">
+    <div class="container" id="top">
+      <section class="section myPointSec">
+        <div class="contentWrap">
+          <div class="titleBox jal">
+            <h2>마이 포인트</h2>
+          </div>
+
+          <div class="myPoint">
+            <p>사용 가능한 포인트</p>
+            <h2><i class="bi bi-p-circle-fill"></i>10,000</h2>
+            <div class="pointInfo">
+              <div class="infoBox">
+                <p>사용한 포인트</p>
+                <p>15,000P</p>
+              </div>
+              <div class="infoBox">
+                <p>총 누적 포인트</p>
+                <p>25,000P</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="giftList">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h2 class="jal">교환권 미리보기</h2>
+            <div class="more">
+              <a href="./giftShop.html"
+              ><i class="bi bi-gift-fill"></i>기프트샵</a
+              >
+            </div>
+          </div>
+          <!-- 슬라이드 시작 -->
+          <div class="giftSlide">
+            <div class="btnBox">
+              <div class="preBtn btn pointer">
+                <i class="bi bi-caret-left-fill"></i>
+              </div>
+              <div class="nextBtn btn pointer">
+                <i class="bi bi-caret-right-fill"></i>
+              </div>
+            </div>
+
+            <div class="gradient gradientL"></div>
+            <div class="gradient gradientR"></div>
+
+            <div class="swiper-container giftShopContainer">
+              <div class="swiper-wrapper giftShopWrapper">
+                <div class="swiper-slide giftShopSlide">
+                  <div class="slideContent">
+                    <div class="imgBox">
+                      <img src="/image/coupon/티빙 쿠폰.png" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide giftShopSlide">
+                  <div class="slideContent">
+                    <div class="imgBox">
+                      <img src="/image/coupon/라프텔 쿠폰.png" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide giftShopSlide">
+                  <div class="slideContent">
+                    <div class="imgBox">
+                      <img src="/image/coupon/넷플릭스 쿠폰.png" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide giftShopSlide">
+                  <div class="slideContent">
+                    <div class="imgBox">
+                      <img
+                              src="/image/coupon/디즈니플러스 쿠폰.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide giftShopSlide">
+                  <div class="slideContent">
+                    <div class="imgBox">
+                      <img src="/image/coupon/왓챠 쿠폰.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 슬라이드 끝 -->
+        </div>
+      </section>
+
+      <section class="gainPoint">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h2 class="jal">포인트 획득 방법</h2>
+          </div>
+
+          <div class="content">
+            <div class="contentBox">
+              <i class="far fa-user"></i> 회원가입
+              <p class="subtxt">회원가입 즉시 1000P 증정!</p>
+            </div>
+
+            <div class="contentBox">
+              <i class="fas fa-birthday-cake"></i> 생일축하
+              <p class="subtxt">생일 당일 로그인 시 1000P 증정!</p>
+            </div>
+
+            <div class="contentBox">
+              <i class="far fa-edit"></i> 코멘트 작성
+              <p class="subtxt">
+                코멘트를 작성할 때 마다 100P를 적립해드려요!<br />
+                <span>(하루 10건 한정)</span>
+              </p>
+            </div>
+
+            <div class="contentBox">
+              <i class="bi bi-calendar-check"></i> 출석 체크
+              <p class="subtxt">매일 출석할 때 마다 500P 적립!</p>
+            </div>
+
+            <div class="contentBox">
+              <i class="far fa-question-circle"></i> 오늘의 퀴즈
+              <p class="subtxt">
+                매일매일 퀴즈를 맞춰보세요!<br />정답을 맞추면 500P 적립!
+              </p>
+            </div>
+
+            <div class="contentBox">
+              <i class="fas fa-spinner"></i>
+              COMMING SOON!
+              <p class="subtxt">
+                더 많은 이벤트를 준비하고 있어요! <br />조금만 기다려주세요!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="bottomUtill">
+    <div class="localBtn pointer">
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+
+    <div class="utillBtn pointer topBtn">
+      <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="utillBtn pointer eventBtn">
+      <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+    </div>
+
+    <div class="utillBtn pointer inquiryBtn">
+      <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+    </div>
+  </div>
+  </body>
+</div>
+</html>

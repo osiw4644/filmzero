@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin/adminBody}">
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/adminCommon.js}"></script>
+
+    <!-- 서머 노트 -->
+    <script th:src="@{/js/summerNote/summernote-lite.js}"></script>
+    <script th:src="@{/js/summerNote/lang/summernote-ko-KR.js}"></script>
+
+    <script th:src="@{/js/summerNote.js}"></script>
+</th:block>
+<th:block layout:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/summerNote/summernote-lite.css}"/>
+    <link rel="stylesheet" th:href="@{/css/adminCommon.css}" />
+</th:block>
+
+    <div layout:fragment="content">
+        <body>
+            <form action="/notice/admin/save" method="post" enctype="multipart/form-data">
+
+                <main class="main">
+                  <div class="container">
+                    <section class="noticeSection section">
+                      <div class="contentWrap">
+                        <div class="titleBox">
+                          <h1 class="jal">공지사항 등록</h1>
+                        </div>
+
+                        <div class="inputWrap neo">
+
+                          <div class="inputBox">
+                            <input type="text" name="noticeWriter" placeholder="작성자를입력하세요">
+                          </div>
+
+                          <div class="inputBox">
+                            <input type="text" name="noticePass" placeholder="작성자비밀번호를입력하세요">
+                          </div>
+
+                          <div class="inputBox">
+                            <input type="text" name="noticeTitle" placeholder="제목을입력하세요">
+                          </div>
+
+                          <div class="inputBox">
+                            <textarea name="noticeContents" id="summerNote"></textarea>
+                          </div>
+
+                          <div class="btn neo">
+
+                              <input type="submit" value="글작성">
+                              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+                          </div>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </main>
+
+            </form>
+        </body>
+    </div>
+</html>

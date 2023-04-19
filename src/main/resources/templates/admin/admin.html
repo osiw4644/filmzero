@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin/adminBody}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/adminCommon.css}" />
+  <link rel="stylesheet" th:href="@{/css/adminMain.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/adminCommon.js}"></script>
+  <script>
+    const saveReq = () => {
+      location.href = "/notice/admin/save";
+    }
+
+    const pagingReq = () => {
+      location.href = "/notice/admin/paging";
+    }
+  </script>
+</th:block>
+
+<div layout:fragment="content">
+  <body class="neo">
+  <main class="main">
+    <div class="container">
+      <section class="section flexSection">
+        <div class="contentWrap noticeWrap">
+          <div class="titleBox neoT">
+            <a onclick="pagingReq()">
+              <h2 onclick="pagingReq()">공지사항<i class="bi bi-caret-right-fill" onclick="pagingReq()"></i></h2>
+            </a>
+
+            <div class="btnBox neo">
+              <div class="btn" onclick="saveReq()"><a>공지등록</a></div>
+            </div>
+          </div>
+
+          <table>
+
+            <tr>
+              <td class="num">번호</td>
+              <td class="title">제목</td>
+              <td class="writer">작성자</td>
+              <td class="date">작성일</td>
+            </tr>
+
+            <tr th:each="notice: ${noticeList}">
+              <td class="num" th:text="${notice.id}"></td>
+              <td class="title"><a th:href="@{|/notice/admin/${notice.id}|(page=${noticeList.number + 1})}" th:text="${notice.noticeTitle}"></a></td>
+              <td class="writer" th:text="${notice.noticeWriter}"></td>
+              <td class="date" th:text="*{#temporals.format(notice.noticeCreatedTime, 'yyyy-MM-dd')}"></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="contentWrap">
+          <div class="titleBox neoT">
+            <a href="/board/paging">
+              <h2>신고/문의관리<i class="bi bi-caret-right-fill"></i></h2>
+            </a>
+            <div class="btn neo">
+              <a href="/board/save">문의등록</a>
+            </div>
+          </div>
+          <table>
+
+            <tr>
+              <td class="num">번호</td>
+              <td class="title">제목</td>
+              <td class="writer">작성자</td>
+              <td class="date">작성일</td>
+            </tr>
+
+            <tr th:each="board: ${boardList}">
+              <td class="num" th:text="${board.id}"></td>
+              <td class="title"><a th:href="@{|/admin/${board.id}|(page=${boardList.number + 1})}" th:text="${board.boardTitle}"></a></td>
+              <td class="writer" th:text="${board.boardWriter}"></td>
+              <td class="date" th:text="*{#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd')}"></td>
+            </tr>
+
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contentWrap">
+          <div class="titleBox neoT">
+            <a href="./contentCS.html">
+              <h2>컨텐츠 관리<i class="bi bi-caret-right-fill"></i></h2>
+            </a>
+          </div>
+
+          <table>
+
+            <tr>
+              <td class="movienum">번호</td>
+              <td class="movieTitle">제목</td>
+              <td class="movieDate">개봉일</td>
+              <td class="movieGenre">장르</td>
+              <td class="movieCountry">국가</td>
+              <td class="movieRate">평점</td>
+            </tr>
+
+            <tr th:each="movieInfo: ${movieList}">
+              <td class="movienum" th:text="${movieInfo.id}"></td>
+              <td class="movieTitle" th:text="${movieInfo.movieNm}"></td>
+              <td class="movieDate" th:text="${movieInfo.openDt}"></td>
+              <td class="movieGenre" th:text="${movieInfo.genreNm}"></td>
+              <td class="movieCountry" th:text="${movieInfo.nationNm}"></td>
+              <td class="movieRate" th:text="${movieInfo.star_avg}"></td>
+            </tr>
+
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contentWrap">
+          <div class="titleBox neoT">
+            <a href="/member/admin/paging">
+              <h2>회원 관리<i class="bi bi-caret-right-fill"></i></h2>
+            </a>
+          </div>
+
+          <table>
+
+            <tr>
+              <td class="memberNum">번호</td>
+              <td class="memberName">회원명</td>
+              <td class="memberNick">닉네임</td>
+              <td class="memberMail">이메일</td>
+              <td class="memberTel">전화번호</td>
+            </tr>
+
+            <tr th:each="member: ${memberList}">
+              <td class="memberNum" th:text="${member.id}"></td>
+              <td class="memberTel" th:text="${member.tel}"></td>
+              <td class="memberName" th:text="${member.name}"></td>
+              <td class="memberNick" th:text="${member.nickname}"></td>
+              <td class="memberNick" th:text="${member.birth}"></td>
+            </tr>
+
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  </body>
+</div>
+</html>

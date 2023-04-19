@@ -1,0 +1,324 @@
+/* HEADER */
+.headerWrap {
+  z-index: 99;
+  background: #fff;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  position: fixed;
+  top: 0;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 5px #8d8d8d;
+}
+
+.headerWrap .menuBox {
+  width: 40%;
+  height: 60px;
+  line-height: 60px;
+}
+
+.headerWrap .menuList {
+  text-align: center;
+  display: flex;
+  justify-content: start;
+}
+
+.headerWrap .menuBox .menuList li {
+  width: 18%;
+  text-align: center;
+}
+
+.headerWrap .logoBox {
+  text-align: center;
+  width: 20%;
+  height: 60px;
+}
+
+.headerWrap .logoBox img {
+  width: 40%;
+}
+
+.headerWrap .searchBox {
+  width: 25%;
+  display: flex;
+  justify-content: end;
+  height: 60px;
+  line-height: 60px;
+}
+
+.headerWrap .searchBox input {
+  width: 75%;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #333;
+  padding-left: 2%;
+  background-color: transparent;
+}
+
+.headerWrap .searchBox i {
+  position: relative;
+  right: 6%;
+  font-size: 1.2rem;
+}
+
+.myInfo {
+  width: 15%;
+  display: flex;
+  justify-content: end;
+  height: 60px;
+  line-height: 60px;
+  padding-right: 2%;
+}
+
+.myInfo i {
+  margin-right: 10px;
+  font-size: 20px;
+  position: relative;
+  top: 4px;
+}
+
+.profile a {
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 30px;
+}
+
+.profile img {
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* main */
+
+.main {
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 50px auto;
+}
+
+.container {
+  padding-top: 120px;
+}
+
+.contentWrap {
+  width: 100%;
+}
+
+/* 타이틀 박스 공통 */
+.titleBox {
+  font-size: 30px;
+  margin: 50px 0 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 더보기 공통 */
+
+.titleBox .moreView {
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.titleBox .moreView {
+  border: 1px solid #666666;
+  border-radius: 30px;
+  padding: 10px;
+  font-family: "NanumSquareNeoBold";
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.titleBox .moreView:hover {
+  border: 1px solid #000;
+}
+
+/* 테이블 공통 */
+table {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+table tr {
+  box-sizing: border-box;
+}
+
+/* BOTTOM BTN */
+.bottomUtill {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.bottomUtill .localBtn {
+  font-size: 25px;
+  color: #fff;
+  background: linear-gradient(45deg, #2142ff, #ba69c8, #ff52c8);
+  padding: 11px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #5c5c5c;
+  z-index: 20;
+}
+
+.utillBox {
+  position: absolute;
+  z-index: 10;
+}
+
+.utillBtn {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 25px;
+  background: #b4b4b4;
+  padding: 11px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.active {
+  opacity: 1;
+}
+
+.utillBtn a {
+  color: #ececec;
+}
+
+.topBtn {
+  bottom: 70px;
+}
+
+.eventBtn {
+  bottom: 52px;
+  right: 50px;
+}
+
+.inquiryBtn {
+  right: 70px;
+}
+
+/* 페이징 버튼 */
+
+.paginationBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paginationBox a {
+display: block;
+  padding: 0 5px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.paginationBox span {
+display: block;
+  padding: 0 5px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.paginationBox .pageBtn a {
+display: block;
+  padding: 0 5px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.paginationBox .numBtn {
+  display: flex;
+}
+
+.paginationBox .numBtn div {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 5px;
+}
+
+.now {
+  background: #7324a1;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  height: 250px;
+  background: #333;
+}
+
+.footerFix {
+  position: fixed;
+  bottom: 0;
+}
+
+.footer .cntBox {
+  text-align: center;
+  width: 100%;
+  background: #000;
+  padding: 25px 0;
+  color: #fff;
+}
+
+.footer .cntBox p {
+  font-size: 18px;
+}
+
+.footer .infoBox {
+  width: 100%;
+  background: #333;
+  font-size: 13px;
+  padding: 20px 130px;
+  box-sizing: border-box;
+  color: #bdbdbd;
+}
+
+.footer .menuList {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.footer .menuList li {
+  width: 10%;
+}
+
+.footer .infoList li {
+  margin-bottom: 10px;
+}
+
+.footer .disFlex p:first-child {
+  padding-right: 10px;
+  border-right: 1px solid #949494;
+}
+
+.footer .infoList li:last-child {
+  margin-top: 30px;
+}
+
+.footer .disFlex p:last-child {
+  margin-left: 10px;
+}

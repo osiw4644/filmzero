@@ -1,0 +1,108 @@
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background: url(../image/background.jpg) top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contentBox {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  transform: translate(0, -65%);
+}
+
+.checkMark {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+  left: -94px;
+  top: 5px;
+}
+
+.checkMark img {
+  width: 150px;
+}
+
+.contentBox h2 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 5px 5px 2px #333;
+  margin-bottom: 50px;
+}
+
+.subBox {
+  margin-bottom: 50px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.subBox p {
+  text-shadow: 2px 2px 2px #333;
+}
+
+.btn_box {
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn_box div {
+  width: 40%;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 30px;
+  box-shadow: 2px 2px 3px #333;
+}
+
+.btn_box div a {
+  display: block;
+  width: 100%;
+}
+
+.btn_login {
+  background: linear-gradient(0deg, #ff6b77, #d42975);
+}
+
+.btn_login:hover {
+  background: linear-gradient(0deg, #d42975, #ff6b77);
+}
+
+.btn_noLogin {
+  background: linear-gradient(0deg, #969696, #fff, #fff);
+}
+
+.btn_noLogin:hover {
+  background: linear-gradient(0deg, #fff, #fff, #969696);
+}
+
+.cntBox {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  background: #000;
+  padding: 25px 0;
+  color: #fff;
+  bottom: 0;
+}
+
+.cntBox p {
+  font-size: 18px;
+}

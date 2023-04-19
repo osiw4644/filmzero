@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin/adminBody}">
+
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/adminCommon.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/adminCommon.js}"></script>
+</th:block>
+
+<div layout:fragment="content">
+  <body>
+  <main class="main">
+    <div class="container">
+      <section class="section">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h1 class="jal">회원 관리</h1>
+          </div>
+        </div>
+
+        <table class="memberTable table neo">
+          <tr>
+            <td class="num">번호</td>
+            <td class="id">아이디</td>
+            <td class="name">이름</td>
+            <td class="nickname">닉네임</td>
+            <td class="birth">생년월일</td>
+            <td class="tel">전화번호</td>
+            <td class="point">포인트</td>
+            <td class="btnBox"></td>
+          </tr>
+
+          <tr th:each="member: ${memberList}">
+            <td class="memberNum" th:text="${member.id}"></td>
+            <td class="memberNick" th:text="${member.name}"></td>
+            <td class="memberTel" th:text="${member.tel}"></td>
+            <td class="memberName" th:text="${member.nickname}"></td>
+            <td class="memberMail" th:text="${member.pw}"></td>
+            <td class="memberTel" th:text="${member.birth}"></td>
+            <td class="point">0</td>
+            <td class="btnBox">
+              <div class="btn">
+                <a th:href="'/admin/memberModify/' +${member.id}">수정</a>
+              </div>
+              <div class="btn"><a th:href="'/admin/Delete/' +${member.id}">삭제</a></div>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </div>
+  </main>
+  </body>
+</div>
+</html>

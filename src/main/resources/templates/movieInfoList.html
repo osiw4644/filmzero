@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>movieInfoList</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>번호</th>
+    <th>영화코드</th>
+    <th>영화제목(국문)</th>
+    <th>영화이름(영문)</th>
+    <th>상영시간</th>
+    <th>개봉연도</th>
+    <th>제작국가명</th>
+    <th>장르명</th>
+    <th>감독명</th>
+    <th>상영등급</th>
+    <th>줄거리</th>
+    <th>별점평균</th>
+    <th>평가인원</th>
+    <th>섬네일</th>
+    <th>누적관객</th>
+    <th>누적매출액</th>
+
+  </tr>
+  <tr th:each="movieInfo: ${movieInfoList}">
+    <td th:text="${movieInfo.id}"></td>
+    <td th:text="${movieInfo.movieCd}"></td>
+    <td th:text="${movieInfo.movieNm}"></td>
+    <td th:text="${movieInfo.movieNmEn}"></td>
+    <td th:text="${movieInfo.showTm}"></td>
+    <td th:text="${movieInfo.openDt}"></td>
+    <td th:text="${movieInfo.nationNm}"></td>
+    <td th:text="${movieInfo.genreNm}"></td>
+    <td th:text="${movieInfo.directorNm}"></td>
+    <td th:text="${movieInfo.watchGrade}"></td>
+    <td th:text="${movieInfo.storyInfo}"></td>
+    <td th:text="${movieInfo.star_avg}"></td>
+    <td th:text="${movieInfo.star_person}"></td>
+    <td th:text="${movieInfo.movieImg_main}"></td>
+    <td th:text="${movieInfo.audiAcc}"></td>
+    <td th:text="${movieInfo.salesAcc}"></td>
+  </tr>
+</table>
+
+
+</body>
+</html>

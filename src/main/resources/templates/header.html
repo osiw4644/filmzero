@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf/org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<header th:fragment="header">
+  <div class="headerWrap neo">
+    <nav class="menuBox">
+      <ul class="menuList">
+        <li>
+          <a href="/notice/paging">공지</a>
+        </li>
+        <li sec:authorize="isAuthenticated()">
+          <a href="/event/game">이벤트</a>
+        </li>
+        <li >
+          <a href="/movie/collection">컬렉션</a>
+        </li>
+        <li sec:authorize="isAuthenticated()">
+          <a href="/board/inquiry">문의하기</a>
+        </li>
+        <li sec:authorize="isAnonymous()">
+          <a href="/member/logins">로그인</a>
+        </li>
+        <li sec:authorize="isAnonymous()">
+          <a href="/member/new">회원가입</a>
+        </li>
+        <li sec:authorize="isAuthenticated()">
+          <a href="/member/logout">로그아웃</a>
+        </li>
+
+      </ul>
+    </nav>
+    <div class="logoBox">
+      <a href="/main"><img th:src="@{/image/favicon.png}" /></a>
+    </div>
+    <div class="searchBox">
+      <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="검색어를 입력하세요"
+      />
+      <i class="bi bi-search"></i>
+    </div>
+    <div class="myInfo">
+<!--      <a href="/member/myPoint">-->
+<!--        <div class="myPoint pointer">-->
+<!--          <i class="bi bi-p-circle-fill themeW"></i>10,000-->
+<!--        </div>-->
+<!--      </a>-->
+      <div class="profile pointer">
+        <a href="/member/myPage" sec:authorize="isAuthenticated()">
+          <img  th:if="${#strings.isEmpty(session.img)}" th:src="@{/image/profileEX.jpg}"/>
+
+          <img th:if="${session.containsKey('img')}" th:src="${session.img}"/>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</header>
+</html>

@@ -1,0 +1,109 @@
+
+/* main */
+
+.contentWrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flexSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexSection .contentWrap {
+  width: 50%;
+  padding: 0 1%;
+}
+
+.noticeWrap .titleBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleBox {
+  border-bottom: 1px solid #c4c4c4;
+  padding: 11px 20px;
+  font-size: 20px;
+  margin: 0;
+}
+
+.titleBox h2 {
+  height: 36px;
+  line-height: 36px;
+}
+
+/* FlexSectio테이블 */
+
+.num {
+  width: 10%;
+}
+
+.title {
+  width: 50%;
+  text-align: left;
+}
+
+.writer {
+width: 15%;
+}
+
+.date {
+  width: 25%;
+}
+
+/* 컨텐츠 테이블 */
+
+.movienum {
+  width: 10%;
+}
+
+.movieTitle {
+  width: 30%;
+  text-align: left;
+}
+
+.movieDate {
+  width: 8%;
+}
+
+.movieGenre {
+  width: 30%;
+}
+
+.movieCountry {
+  width: 15%;
+}
+
+.movieRate {
+  width: 7%;
+}
+
+/* 회원관리 테이블 */
+.memberNum {
+  width: 5%;
+}
+
+.memberName {
+  width: 15%;
+}
+
+.memberId {
+  width: 20%;
+}
+
+.memberNick {
+  width: 20%;
+}
+
+.memberMail {
+  width: 20%;
+}
+
+.memberTel {
+  width: 20%;
+}
+.contentWrap {
+  height: 239px;
+  overflow: hidden;
+}

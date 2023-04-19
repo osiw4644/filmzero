@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{body}">
+<th:block layout:fragment="css">
+  <link rel="stylesheet" th:href="@{/css/common.css}" />
+  <link rel="stylesheet" th:href="@{/css/main.css}" />
+</th:block>
+<th:block layout:fragment="script">
+  <script th:src="@{/js/main.js}"></script>
+  <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function(){
+            var msg = [[${errorMessage}]];
+            if(msg !=null){
+                alert(msg);
+            }
+        });
+        /*]]*/
+    </script>
+</th:block>
+<body>
+<div layout:fragment="content">
+  <main class="main neo">
+    <div class="container" id="top">
+      <!-- 비디오 섹션 -->
+      <section class="videoSection">
+        <div class="contentWrap">
+          <div class="videoBox">
+            <video
+                    th:src="@{/image/video/Chickenhare_Video.mp4}"
+                    autoplay
+                    loop
+            ></video>
+          </div>
+
+          <div class="gradient">
+            <div class="textBox">
+              <div class="neoB">개봉예정작</div>
+              <h2 class="title neoT">치킨래빗:잃어버린 보물을 찾아서</h2>
+              <p class="subTitle">
+                주토피아 제작진의 차기작! <br />
+                신나는 동물 어드벤처!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 슬라이드 섹션 -->
+      <section class="section movieChartSection">
+        <div class="contentWrap">
+          <div class="titleBox jal">
+            <h2>무비차트</h2>
+          </div>
+
+          <!-- 슬라이드 시작-->
+          <div class="slideWrap">
+            <div class="btnBox">
+              <div class="btn preBtn">
+                <i class="bi bi-caret-left-fill"></i>
+              </div>
+              <div class="btn nextBtn">
+                <i class="bi bi-caret-right-fill"></i>
+              </div>
+            </div>
+
+            <div class="swiper-container chartContainer">
+              <div class="swiper-wrapper chartWrapper">
+                <div  th:each="movie:${movieList}" class="swiper-slide chartSlider">
+
+                  <div class="imgBox">
+                    <a th:href="@{|/movie/de/${movie.id}}"> <img th:src="${movie.movieImg_main}"/></a>
+                  </div>
+                  <div class="txtBox">
+                    <a th:href="@{|/movie/de/${movie.id}}"> <h2 class="title" th:text="${movie.movieNm}"></h2></a>
+                    <div class="releaseInfo">
+                      <p class="date" th:text="${movie.openDt}"></p>
+                      <p class="country" th:text="${movie.nationNm}"></p>
+                    </div>
+
+                    <div class="rateData">
+                      <p>평균</p>
+                      <p class="rating" th:text="${movie.star_avg}"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 슬라이드 버튼 -->
+          </div>
+          <!-- 슬라이드 끝 -->
+        </div>
+      </section>
+
+      <!-- 공지/이벤트 섹션 -->
+      <section class="section noticeSection">
+        <div class="contentWrap">
+          <div class="flexBox noticeBox">
+            <div class="titleBox">
+              <h1 class="jal">공지사항</h1>
+              <div class="moreView">
+                <a href="/notice/paging"
+                >더보기 <i class="bi bi-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- 공지 목록 (최근 6건만 노출) -->
+            <div class="tablewrap">
+              <table class="noticeTable">
+                <tr th:each="notice: ${noticeList}">
+                  <td class="num" th:text="${notice.id}"></td>
+                  <td class="title"><a th:href="@{|/notice/${notice.id}|(page=${noticeList.number + 1})}" th:text="${notice.noticeTitle}"></a></td>
+                  <td class="date" th:text="*{#temporals.format(notice.noticeCreatedTime, 'yyyy-MM-dd')}"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="flexBox eventBox">
+            <div class="titleBox">
+              <h1 class="jal">이벤트</h1>
+              <div class="moreView">
+                <a href="/event/game"
+                >더보기<i class="bi bi-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- 이벤트 슬라이더 -->
+            <div class="contentBox">
+              <div class="btnBox">
+                <div class="btn preBtnMini">
+                  <i class="bi bi-caret-left-fill"></i>
+                </div>
+                <div class="btn nextBtnMini">
+                  <i class="bi bi-caret-right-fill"></i>
+                </div>
+              </div>
+
+              <div class="swiper-container miniContainer">
+                <div class="swiper-wrapper miniWrap">
+                  <div class="swiper-slide mini-slide">
+                    <img
+                            th:src="@{/image/main/event/check.jpg}"
+                            alt="이벤트 이미지"
+                    />
+                  </div>
+
+                  <div class="swiper-slide mini-slide">
+                    <img
+                            src="/image/main/event/quiz.jpg"
+                            alt="이벤트 이미지"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 컬렉션 섹션 -->
+      <section class="section collSection">
+        <div class="contentWrap">
+          <div class="titleBox">
+            <h1 class="jal">제로필름 컬렉션</h1>
+            <div class="moreView">
+              <a href="./collection.html"
+              >더보기 <i class="bi bi-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- 컬렉션 슬라이더 -->
+          <div class="slideWrap">
+            <!-- 컬렉션 버튼 -->
+            <div class="btnBox">
+              <div class="btn preBtn button_pre">
+                <i class="bi bi-caret-left-fill"></i>
+              </div>
+              <div class="btn nextBtn button_next">
+                <i class="bi bi-caret-right-fill"></i>
+              </div>
+            </div>
+            <div class="swiper-container colContainer">
+              <div class="swiper-wrapper colWrapper">
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/action">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{http://img.movist.com/?img=/x00/05/62/00_p1.jpg}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/68/20_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/36f22dea0e0a9e0e626c549ce689558160c46ed4}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/2032840c034ca7a2536b55adabb0e8a5ca99dd83}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+                      <div class="textBox">
+                        <h2>베를린 영화제 액션짱상</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/ani">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{https://t1.daumcdn.net/movie/1eef5d86e3c1771cf119e5ad96fe4c5540ed378a}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/15/22_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/74/59_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/3cea7130cd9af437f24406c9c67768dcd50cf4d9}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+
+                      <div class="textBox">
+                        <h2>더 빠져들 수 밖에 애니메이션</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/audi">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{http://img.movist.com/?img=/x00/05/11/49_p1.jpg}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{https://t1.daumcdn.net/movie/5d3c3e6f0e2078681fb0f1a17240e901a8638bd3}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/00/73/84_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/a8bb59792be27ba3f51b20b427873611e15e1c1d}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+                      <div class="textBox">
+                        <h2>누적관객 보장 믿고보는 시리즈</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/crime">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{https://t1.daumcdn.net/movie/4127deb531fea9b766461efb61da18af55697d3c}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/48/06_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/3f7e3035989e7918c6426e541c864d0d8a295de2}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/112dd823e87e52a7203bb658c92cf86eb6237add}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+
+                      <div class="textBox">
+                        <h2>범죄 매니아들 모여라 땀나는 범죄스릴러 모음</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/documentary">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{http://img.movist.com/?img=/x00/05/59/05_p1.jpg}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/28/65_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/9f4fcc696cb967895ae0735c198d0b9f0551fb3a}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/360edc32c521d7536c31e167cfd3cf5f3fe4bc74}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+                      <div class="textBox">
+                        <h2>감동실화 정보의 바다 다큐멘터리 시리즈</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/horror">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{https://t1.daumcdn.net/movie/72b4fc6907bd4584c844f167e2a816c848e16286}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/65/66_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/64/06_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/61/18_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+
+                      <div class="textBox">
+                        <h2>순식간에 서늘해지는 공포시리즈 무서운게딱좋아!</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/romance">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{https://ssl.pstatic.net/imgmovie/mdi/mit110/2100/210029_P08_173729.jpg}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/66/20_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/a2df5c2a801f97b602c729dd0c34d64bde259b11}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/84ee1d6c105971563641182144d8c373f4831865}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+                      <div class="textBox">
+                        <h2>두근두근 로맨스 명작</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/star">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{https://t1.daumcdn.net/movie/7c29e6819af620bde9448554d9376fb61bde9d18}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/42/65_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/40/66_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/53/22_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+
+                      <div class="textBox">
+                        <h2>믿고보는 영화러버들의 선택 별점왕시리즈</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="swiper-slide colSlide">
+                  <div class="sldieContent">
+                    <a href="/collection/thriller">
+                      <div class="imgBox">
+                        <img
+                                th:src="@{http://img.movist.com/?img=/x00/05/73/09_p1.jpg}"
+                                alt="컬렉션 썸네일"
+                        /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/79/34_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{http://img.movist.com/?img=/x00/05/59/06_p1.jpg}"
+                              alt="컬렉션 썸네일"
+                      /><img
+                              th:src="@{https://t1.daumcdn.net/movie/62c5652a3c98ab52e3f3acf6e6b028c89d476f27}"
+                              alt="컬렉션 썸네일"
+                      />
+                      </div>
+
+                      <div class="textBox">
+                        <h2>인생이 무료해! 스릴이 필요해! 스릴러시리즈</h2>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="bottomUtill">
+    <div class="localBtn pointer">
+      <i class="bi bi-geo-alt-fill"></i>
+    </div>
+
+    <div class="utillBtn pointer topBtn">
+      <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="utillBtn pointer eventBtn">
+      <a href="/event/game"><i class="bi bi-calendar-check"></i></a>
+    </div>
+
+    <div class="utillBtn pointer inquiryBtn">
+      <a href="/board/inquiry"><i class="bi bi-question-lg"></i></a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

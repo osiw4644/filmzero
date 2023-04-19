@@ -1,0 +1,132 @@
+/* 전체 공통 */
+
+.commentSection textarea {
+  width: 100%;
+  resize: none;
+  border: 0;
+  font-family: "NanumSquareNeo" !important;
+  font-size: 16px;
+  line-height: 25px;
+  outline: none;
+  background: transparent;
+}
+
+.commentBox {
+  width: 80%;
+  margin: 0 auto;
+  background: #ebdaff85;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+/* 프로필 영역 */
+
+.commentSection .profile {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #77777341;
+}
+
+.commentSection .profileImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 20px;
+}
+
+.commentSection .profileImg img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* 내용 출력 */
+.commentSection .contentBox {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 소셜 버튼 */
+.commentSection .btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  font-size: 23px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #777773b0;
+}
+
+.commentSection .like:hover {
+  color: red;
+}
+
+.commentSection .recomment {
+  margin-left: 15px;
+}
+
+.commentSection .recomment:hover {
+  color: #000;
+}
+
+.txtRed {
+  color: red;
+}
+
+/* 덧글 출력 */
+
+.recommendOutput {
+  width: 100%;
+  display: flex;
+}
+
+.recommendOutput .profileImg {
+  margin-left: 20px;
+}
+
+.recommendOutput .recommentContent {
+  width: 100%;
+}
+
+/* 덧글 입력 */
+.recommentInput {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.recommentInput .cntBox {
+  display: flex;
+  justify-content: end;
+  font-size: 13px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.recommentInput .cntBox .textCnt {
+  font-size: 15px;
+}
+
+.recommentInput .saveBtn {
+  text-align: center;
+
+  display: flex;
+  justify-content: end;
+}
+
+.recommentInput .saveBtn p {
+  background: #d8b6ff;
+  width: 80px;
+  padding: 8px 0;
+  border-radius: 10px;
+}
